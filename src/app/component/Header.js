@@ -93,19 +93,25 @@ export default function Header() {
                   <div className="dropdown-menu bg-light mt-2 text-center">
                     <Link
                       href="/construction/commercial"
-                      className="dropdown-item"
+                       className={`dropdown-item ${
+                    pathname === "/construction/commercial" ? "active" : ""
+                  }`}
                     >
                       Commercial
                     </Link>
                     <Link
                       href="/construction/industrial"
-                      className="dropdown-item"
+                       className={`dropdown-item ${
+                    pathname === "/construction/industrial" ? "active" : ""
+                  }`}
                     >
-                      Industrial 
+                      Industrial
                     </Link>
                     <Link
-                      href="/construction/residental"
-                      className="dropdown-item"
+                      href="/construction/residential"
+                       className={`dropdown-item ${
+                    pathname === "/construction/residential" ? "active" : ""
+                  }`}
                     >
                       Residental
                     </Link>
@@ -120,22 +126,19 @@ export default function Header() {
                     Interiors +
                   </Link>
                   <div className="dropdown-menu bg-light mt-2 text-center">
-                    <Link
-                      href="/construction/commercial"
-                      className="dropdown-item"
-                    >
+                    <Link href="/interior/commercial"  className={`dropdown-item ${
+                    pathname === "/interior/commercial" ? "active" : ""
+                  }`}>
                       Commercial
                     </Link>
-                    <Link
-                      href="/construction/industrial"
-                      className="dropdown-item"
-                    >
+                    <Link href="/interior/industrial"  className={`dropdown-item ${
+                    pathname === "/interior/industrial" ? "active" : ""
+                  }`}>
                       Industrial
                     </Link>
-                    <Link
-                      href="/construction/residental"
-                      className="dropdown-item"
-                    >
+                    <Link href="/interior/residential"  className={`dropdown-item ${
+                    pathname === "/interior/residential" ? "active" : ""
+                  }`}>
                       Residental
                     </Link>
                   </div>

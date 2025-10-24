@@ -1,5 +1,5 @@
 "use client";
-export default function ConCommercial() {
+export default function IntResidential() {
   return (
     <>
       {/* Hero Start */}
@@ -7,7 +7,7 @@ export default function ConCommercial() {
         <div className="container py-5">
           <div className="row g-5 align-items-center mb-5">
             <div className="col-lg-6 text-center text-lg-start">
-              <h1 className="display-1 mb-0 animated slideInLeft">Commercial</h1>
+              <h1 className="display-1 mb-0 animated slideInLeft">Residential</h1>
             </div>
             <div className="col-lg-6 animated slideInRight">
               <nav aria-label="breadcrumb">
@@ -21,7 +21,7 @@ export default function ConCommercial() {
                     className="breadcrumb-item text-secondary active"
                     aria-current="page"
                   >
-                    Commercial
+                    Residential
                   </li>
                 </ol>
               </nav>

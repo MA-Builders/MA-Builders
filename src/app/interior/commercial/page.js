@@ -1,5 +1,5 @@
 "use client";
-export default function ConCommercial() {
+export default function IntCommercial() {
   return (
     <>
       {/* Hero Start */}

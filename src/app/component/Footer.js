@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Footer() {
   return (
@@ -9,13 +10,16 @@ export default function Footer() {
           <div className="row g-5">
             {/* Logo & About */}
             <div className="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.1s">
-              <Link
-                href="/"
-                className="d-inline-block mb-3 text-decoration-none"
-              >
-                <h1 className="text-white">iSTUDIO</h1>
+              <Link href="/" className="navbar-brand text-decoration-none">
+                <Image
+                  src="/img/ma-builders-logo.png"
+                  alt="Brand Logo"
+                  width={200}
+                  height={50}
+                  className="d-inline-block align-text-top mt-0"
+                />
               </Link>
-              <p className="mb-0">
+              <p className="mb-0 pt-3">
                 Tempor erat elitr rebum at clita. Diam dolor diam ipsum et
                 tempor sit. Aliqu diam amet diam et eos labore. Clita erat ipsum
                 et lorem et sit, sed stet no labore lorem sit. Sanctus clita duo
@@ -85,9 +89,6 @@ export default function Footer() {
               <Link href="#!" className="btn btn-link">
                 Terms &amp; Condition
               </Link>
-              <Link href="#!" className="btn btn-link">
-                Career
-              </Link>
             </div>
 
             {/* Services */}
@@ -111,7 +112,6 @@ export default function Footer() {
             </div>
           </div>
         </div>
-
         {/* Copyright */}
         <div className="container wow fadeIn" data-wow-delay="0.1s">
           <div className="copyright">
@@ -130,14 +130,6 @@ export default function Footer() {
                   className="border-bottom text-decoration-none text-white-50"
                 >
                   HTML Codex
-                </Link>
-                . Distributed by{" "}
-                <Link
-                  href="https://themewagon.com"
-                  target="_blank"
-                  className="border-bottom text-decoration-none text-white-50"
-                >
-                  ThemeWagon
                 </Link>
               </div>
               <div className="col-md-6 text-center text-md-end">
