@@ -461,3 +461,40 @@
     padding-right: 0 ;
     border-right: none ;
 }
+.category-badge-custom {
+  background-color: white;
+  color: grey;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border-radius: 0 0.5rem 0.5rem 0; /* subtle rounded edge */
+}
+
+.category-badge-custom:hover {
+  background-color: grey;
+  color: white;
+  cursor: pointer;
+}
+
+/* Read More Button */
+.read-more-btn-custom {
+  border: 1px solid grey;
+  color: grey;
+  background-color: white;
+  transition: all 0.3s ease;
+}
+
+.read-more-btn-custom:hover {
+  background-color: grey;
+  color: white;
+  text-decoration: none;
+}
+
+/* Blog Card hover smoothness */
+.blog-card {
+  transition: all 0.3s ease;
+  border-radius: 1rem; /* same as rounded-4 */
+}
+
+.blog-card:hover {
+  transform: translateY(-5px);
+}
