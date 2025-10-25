@@ -498,3 +498,20 @@
 .blog-card:hover {
   transform: translateY(-5px);
 }
+.timeline::before {
+ content: '';
+ position: absolute;
+ left: 50%;
+ top: 0;
+ transform: translateX(-50%);
+ width: 4px;
+ height: 100%;
+ background-color: #20c997;
+}
+.timeline-content { width: 48%; }
+.timeline-content:hover { transform: translateY(-5px); }
+.step-number { color: #20c997; }
+ @media (max-width: 768px) {
+.timeline::before { left: 8px; }
+.timeline-content { width: 100%; }
+}

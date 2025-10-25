@@ -117,36 +117,11 @@ export default function Footer() {
           <div className="copyright">
             <div className="row">
               <div className="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                &copy;{" "}
-                <Link
-                  href="#!"
-                  className="border-bottom text-decoration-none text-white-50"
-                >
-                  Your Site Name
-                </Link>
-                , All Rights Reserved. Designed By{" "}
-                <Link
-                  href="https://htmlcodex.com"
-                  className="border-bottom text-decoration-none text-white-50"
-                >
-                  HTML Codex
-                </Link>
+                &copy; 2025 MA Builders |
+                All Rights Reserved.  
               </div>
               <div className="col-md-6 text-center text-md-end">
-                <div className="footer-menu">
-                  <Link href="#!" className="text-white-50 me-3">
-                    Home
-                  </Link>
-                  <Link href="#!" className="text-white-50 me-3">
-                    Cookies
-                  </Link>
-                  <Link href="#!" className="text-white-50 me-3">
-                    Help
-                  </Link>
-                  <Link href="#!" className="text-white-50">
-                    FAQs
-                  </Link>
-                </div>
+                Designed By CloudLabel.
               </div>
             </div>
           </div>

@@ -1,8 +1,15 @@
 "use client";
+import React, { useEffect } from "react";
+import Image from "next/image";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 
-import React from "react";
+export default function HomePage() {
+  useEffect(() => {
+    AOS.init({ duration: 800, easing: "ease-in-out" });
+  }, []);
 
-const HomePage = () => {
   return (
     <>
       {/* Hero Start */}
@@ -10,71 +17,108 @@ const HomePage = () => {
         <div className="container py-5">
           <div className="row g-5 align-items-center mb-5">
             <div className="col-lg-6">
-              <h1 className="display-1 mb-4 animated slideInRight">
+              <h1 className="display-1 mb-4" data-aos="slide-right">
                 We Make Your <span className="text-primary">Home</span> Better
               </h1>
-              <h5 className="d-inline-block border border-2 border-white py-3 px-5 mb-0 animated slideInRight">
+              <h5
+                className="d-inline-block border border-2 border-white py-3 px-5 mb-0"
+                data-aos="slide-right"
+              >
                 An Award Winning Studio Since 1990
               </h5>
             </div>
             <div className="col-lg-6">
-              <div className="owl-carousel header-carousel animated fadeIn">
-                {["hero-slider-1.jpg", "hero-slider-2.jpg", "hero-slider-3.jpg"].map(
-                  (img, i) => (
-                    <img key={i} className="img-fluid" src={`img/${img}`} alt="" />
-                  )
-                )}
+              <div className="owl-carousel header-carousel" data-aos="fade-in">
+                {[
+                  "hero-slider-1.jpg",
+                  "hero-slider-2.jpg",
+                  "hero-slider-3.jpg",
+                ].map((img, i) => (
+                  <Image
+                    key={i}
+                    src={`/img/${img}`}
+                    alt=""
+                    width={600}
+                    height={400}
+                    className="img-fluid"
+                  />
+                ))}
               </div>
             </div>
           </div>
-          <div className="row g-5 animated fadeIn">
-            {["Crafted Furniture", "Sustainable Material", "Innovative Architects", "Budget Friendly"].map(
-              (text, i) => (
-                <div key={i} className="col-md-6 col-lg-3">
-                  <div className="d-flex align-items-center">
-                    <div className="flex-shrink-0 btn-square border border-2 border-white me-3">
-                      <i className="fa fa-robot text-primary"></i>
-                    </div>
-                    <h5 className="lh-base mb-0">{text}</h5>
+
+          <div className="row g-5" data-aos="fade-in">
+            {[
+              "Crafted Furniture",
+              "Sustainable Material",
+              "Innovative Architects",
+              "Budget Friendly",
+            ].map((text, i) => (
+              <div key={i} className="col-md-6 col-lg-3">
+                <div className="d-flex align-items-center">
+                  <div className="flex-shrink-0 btn-square border border-2 border-white me-3">
+                    <i className="fa fa-robot text-primary"></i>
                   </div>
+                  <h5 className="lh-base mb-0">{text}</h5>
                 </div>
-              )
-            )}
+              </div>
+            ))}
           </div>
         </div>
       </div>
       {/* Hero End */}
+
       {/* About Start */}
       <div className="container-fluid py-5">
         <div className="container">
           <div className="row g-5">
             <div className="col-lg-6">
-              <div className="row">
-                <div className="col-6 wow fadeIn" data-wow-delay="0.1s">
-                  <img className="img-fluid" src="img/about-1.jpg" alt="" />
+              <div className="row g-3">
+                <div className="col-6" data-aos="fade-in">
+                  <Image
+                    src="/img/about-1.jpg"
+                    alt=""
+                    width={400}
+                    height={400}
+                    className="img-fluid"
+                  />
                 </div>
-                <div className="col-6 wow fadeIn" data-wow-delay="0.3s">
-                  <img className="img-fluid h-75" src="img/about-2.jpg" alt="" />
-                  <div className="h-25 d-flex align-items-center text-center bg-primary px-4">
-                    <h4 className="text-white lh-base mb-0">
-                      Award Winning Studio Since 1990
-                    </h4>
+                <div className="col-6" data-aos="fade-in">
+                  <div className="position-relative h-100">
+                    <Image
+                      src="/img/about-2.jpg"
+                      alt=""
+                      width={400}
+                      height={300}
+                      className="img-fluid h-75 w-100"
+                    />
+                    <div
+                      className="position-absolute bottom-0 start-0 w-100 bg-primary d-flex align-items-center justify-content-center"
+                      style={{ height: "25%" }}
+                    >
+                      <h4 className="text-white mb-0 text-center">
+                        Award Winning Studio Since 1990
+                      </h4>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div className="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
+
+            <div className="col-lg-6" data-aos="fade-in">
               <h1 className="mb-5">
-                <span className="text-uppercase text-primary bg-light px-2">History</span> of Our Creation
+                <span className="text-uppercase text-primary bg-light px-2">
+                  History
+                </span>{" "}
+                of Our Creation
               </h1>
               <p className="mb-4">
-                Tempor erat elitr rebum at clita. Diam dolor diam ipsum et tempor sit. Aliqu diam
-                amet diam et eos labore. Clita erat ipsum et lorem et sit, sed stet no labore lorem sit. Sanctus
-                clita duo justo et tempor eirmod magna dolore erat amet
+                Tempor erat elitr rebum at clita. Diam dolor diam ipsum et
+                tempor sit. Aliqu diam amet diam et eos labore...
               </p>
               <p className="mb-5">
-                Aliqu diam amet diam et eos labore. Clita erat ipsum et lorem et sit, sed stet no
-                labore lorem sit. Sanctus clita duo justo et tempor.
+                Aliqu diam amet diam et eos labore. Clita erat ipsum et lorem et
+                sit, sed stet no labore lorem sit...
               </p>
               <div className="row g-3">
                 {[
@@ -91,30 +135,41 @@ const HomePage = () => {
                   </div>
                 ))}
               </div>
+
               <div className="d-flex align-items-center mt-5">
                 <a className="btn btn-primary px-4 me-2" href="#!">
                   Read More
                 </a>
-                {["facebook-f", "twitter", "instagram", "linkedin-in"].map((icon, i) => (
-                  <a key={i} className="btn btn-outline-primary btn-square border-2 me-2" href="#!">
-                    <i className={`fab fa-${icon}`}></i>
-                  </a>
-                ))}
+                {["facebook-f", "twitter", "instagram", "linkedin-in"].map(
+                  (icon, i) => (
+                    <a
+                      key={i}
+                      className="btn btn-outline-primary btn-square border-2 me-2"
+                      href="#!"
+                    >
+                      <i className={`fab fa-${icon}`}></i>
+                    </a>
+                  )
+                )}
               </div>
             </div>
           </div>
         </div>
       </div>
       {/* About End */}
+
       {/* Feature Start */}
       <div className="container-fluid py-5">
         <div className="container">
-          <div className="text-center wow fadeIn" data-wow-delay="0.1s">
-            <h1 className="mb-5">
-              Why People <span className="text-uppercase text-primary bg-light px-2">Choose Us</span>
+          <div className="text-center mb-5" data-aos="fade-in">
+            <h1>
+              Why People{" "}
+              <span className="text-uppercase text-primary bg-light px-2">
+                Choose Us
+              </span>
             </h1>
           </div>
-          <div className="row g-5 align-items-center text-center">
+          <div className="row g-5 text-center">
             {[
               { icon: "fa-calendar-alt", title: "25+ Years Experience" },
               { icon: "fa-tasks", title: "Best Interior Design" },
@@ -123,16 +178,12 @@ const HomePage = () => {
               { icon: "fa-hand-holding-usd", title: "Budget Friendly" },
               { icon: "fa-check", title: "Sustainable Material" },
             ].map((feature, i) => (
-              <div
-                key={i}
-                className="col-md-6 col-lg-4 wow fadeIn"
-                data-wow-delay={`${0.1 + i * 0.2}s`}
-              >
+              <div key={i} className="col-md-6 col-lg-4" data-aos="fade-in">
                 <i className={`fa ${feature.icon} fa-5x text-primary mb-4`}></i>
                 <h4>{feature.title}</h4>
                 <p className="mb-0">
-                  Clita erat ipsum et lorem et sit, sed stet no labore lorem sit. Sanctus clita duo
-                  justo et tempor eirmod magna dolore erat amet
+                  Clita erat ipsum et lorem et sit, sed stet no labore lorem
+                  sit...
                 </p>
               </div>
             ))}
@@ -140,194 +191,162 @@ const HomePage = () => {
         </div>
       </div>
       {/* Feature End */}
-      {/* Project Start */}
-      <div className="container-fluid mt-5">
-        <div className="container mt-5">
-          <div className="row g-0">
-            <div className="col-lg-5 wow fadeIn" data-wow-delay="0.1s">
-              <div className="d-flex flex-column justify-content-center bg-primary h-100 p-5">
-                <h1 className="text-white mb-5">
-                  Our Latest <span className="text-uppercase text-primary bg-light px-2">Projects</span>
-                </h1>
-                <h4 className="text-white mb-0">
-                  <span className="display-1">6</span> of our latest projects
-                </h4>
-              </div>
-            </div>
-            <div className="col-lg-7">
-              <div className="row g-0">
-                {[
-                  { img: "project-1.jpg", title: "Kitchen", count: 72 },
-                  { img: "project-2.jpg", title: "Bathroom", count: 67 },
-                  { img: "project-3.jpg", title: "Bedroom", count: 53 },
-                  { img: "project-4.jpg", title: "Living Room", count: 33 },
-                  { img: "project-5.jpg", title: "Furniture", count: 87 },
-                  { img: "project-6.jpg", title: "Rennovation", count: 69 },
-                ].map((proj, i) => (
-                  <div key={i} className="col-md-6 col-lg-4 wow fadeIn" data-wow-delay={`${0.2 + i * 0.1}s`}>
-                    <div className="project-item position-relative overflow-hidden">
-                      <img className="img-fluid w-100" src={`img/${proj.img}`} alt="" />
-                      <a className="project-overlay text-decoration-none" href="#!">
-                        <h4 className="text-white">{proj.title}</h4>
-                        <small className="text-white">{proj.count} Projects</small>
-                      </a>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      {/* Project End */}
-      {/* Service Start */}
-      <div className="container-fluid py-5">
-        <div className="container py-5">
-          <div className="row g-5 align-items-center">
-            <div className="col-lg-5 wow fadeIn" data-wow-delay="0.1s">
-              <h1 className="mb-5">
-                Our Creative <span className="text-uppercase text-primary bg-light px-2">Services</span>
-              </h1>
-              <p>
-                Aliqu diam amet diam et eos labore. Clita erat ipsum et lorem et sit, sed stet no
-                labore lorem sit. Sanctus clita duo justo et tempor eirmod magna dolore erat amet
-              </p>
-              <p className="mb-5">
-                Tempor erat elitr rebum at clita. Diam dolor diam ipsum et tempor sit. Aliqu diam
-                amet diam et eos labore. Clita erat ipsum et lorem et sit, sed stet no labore lorem sit. Sanctus
-                clita duo justo et tempor eirmod magna dolore erat amet
-              </p>
-              <div className="d-flex align-items-center bg-light">
-                <div className="btn-square flex-shrink-0 bg-primary" style={{ width: 100, height: 100 }}>
-                  <i className="fa fa-phone fa-2x text-white"></i>
+      <hr className="border-radius"></hr>
+      {/* Construction Process Start */}
+      <div className="container py-5">
+        <h4 className="text-center mb-5" data-aos="fade-up">
+          Our Design Process
+        </h4>
+
+        <div className="timeline position-relative">
+          {/* Vertical Line */}
+          <div
+            className="position-absolute top-0 start-50 translate-middle-x h-100 border-start border-2 border-primary"
+            style={{ zIndex: 0 }}
+          ></div>
+
+          {[
+            { num: "01", title: "Site Plan", img: "/img/project-1.jpg" },
+            {
+              num: "02",
+              title: "Architectural Floor Plan",
+              img: "/img/project-2.jpg",
+            },
+            { num: "03", title: "3D Hall Layout", img: "/img/project-3.jpg" },
+            {
+              num: "04",
+              title: "Structural Drawing",
+              img: "/img/project-4.jpg",
+            },
+            {
+              num: "05",
+              title: "Elevation 3D Design",
+              img: "/img/project-5.jpg",
+            },
+            { num: "06", title: "Approval Drawing", img: "/img/project-6.jpg" },
+            {
+              num: "07",
+              title: "3D Interior Designs",
+              img: "/img/project-1.jpg",
+            },
+          ].map((step, i) => (
+            <div
+              key={i}
+              className={`timeline-item d-flex mb-5 justify-content-${
+                i % 2 === 0 ? "start" : "end"
+              }`}
+              data-aos={i % 2 === 0 ? "fade-right" : "fade-left"}
+              style={{ position: "relative", zIndex: 1 }}
+            >
+              {/* Dot */}
+              <div
+                className="position-absolute top-50 start-50 translate-middle bg-primary rounded-circle"
+                style={{ width: "20px", height: "20px", zIndex: 2 }}
+              ></div>
+
+              <div className="timeline-content bg-white shadow-sm text-center p-3 rounded w-48">
+                <div className="step-number text-primary fw-bold display-6">
+                  {step.num}
                 </div>
-                <div className="px-3">
-                  <h3>+0123456789</h3>
-                  <span>Call us direct 24/7 for get a free consultation</span>
-                </div>
-              </div>
-            </div>
-            <div className="col-lg-7">
-              <div className="row g-0">
-                {[
-                  { img: "service-1.jpg", title: "Interior Design", bg: "bg-primary" },
-                  { img: "service-2.jpg", title: "Implement", bg: "bg-light" },
-                  { img: "service-3.jpg", title: "Renovation", bg: "bg-light" },
-                  { img: "service-4.jpg", title: "Commercial", bg: "bg-primary" },
-                ].map((service, i) => (
-                  <div key={i} className="col-md-6 wow fadeIn" data-wow-delay={`${0.2 + i * 0.2}s`}>
-                    <div className={`service-item h-100 d-flex flex-column justify-content-center ${service.bg}`}>
-                      <a href="#!" className="service-img position-relative mb-4">
-                        <img className="img-fluid w-100" src={`img/${service.img}`} alt="" />
-                        <h3>{service.title}</h3>
-                      </a>
-                      <p className="mb-0">
-                        Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam
-                        stet diam sed stet lorem.
-                      </p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      {/* Service End */}
-      {/* Team Start */}
-      <div className="container-fluid bg-light py-5">
-        <div className="container py-5">
-          <h1 className="mb-5">
-            Our Professional <span className="text-uppercase text-primary bg-light px-2">Designers</span>
-          </h1>
-          <div className="row g-4">
-            {[
-              { img: "team-1.jpg", name: "Boris Johnson" },
-              { img: "team-2.jpg", name: "Donald Pakura" },
-              { img: "team-3.jpg", name: "Bradley Gordon" },
-              { img: "team-4.jpg", name: "Alexander Bell" },
-            ].map((member, i) => (
-              <div key={i} className="col-md-6 col-lg-3 wow fadeIn" data-wow-delay={`${0.1 + i * 0.2}s`}>
-                <div className="team-item position-relative overflow-hidden">
-                  <img className="img-fluid w-100" src={`img/${member.img}`} alt="" />
-                  <div className="team-overlay">
-                    <small className="mb-2">Architect</small>
-                    <h4 className="lh-base text-light">{member.name}</h4>
-                    <div className="d-flex justify-content-center">
-                      {["facebook-f", "twitter", "instagram", "linkedin-in"].map((icon, j) => (
-                        <a key={j} className="btn btn-outline-primary btn-sm-square border-2 me-2" href="#!">
-                          <i className={`fab fa-${icon}`}></i>
-                        </a>
-                      ))}
-                    </div>
-                  </div>
+                <h6 className="mt-2 mb-3">{step.title}</h6>
+                <div className="ratio ratio-16x9">
+                  <Image
+                    src={step.img}
+                    alt={step.title}
+                    width={500}
+                    height={300}
+                    className="img-fluid rounded"
+                  />
                 </div>
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="text-center mt-4">
+          <i className="fa-solid fa-chevron-down fs-3 text-muted"></i>
         </div>
       </div>
-      {/* Team End */}
-      {/* Testimonial Start */}
-      <div className="container-xxl py-5">
-        <div className="container py-5">
-          <div className="row justify-content-center">
-            <div className="col-md-12 col-lg-9">
-              <div className="owl-carousel testimonial-carousel wow fadeIn" data-wow-delay="0.2s">
-                {[
-                  { img: "testimonial-1.jpg", title: "Sustainable Material", desc: "Aliqu diam amet diam et eos labore. Clita erat ipsum et lorem et sit, sed stet no labore lorem sit. Sanctus clita duo justo et tempor eirmod magna dolore erat amet", name: "Boris Johnson" },
-                  { img: "testimonial-2.jpg", title: "Customer Satisfaction", desc: "Clita erat ipsum et lorem et sit, sed stet no labore lorem sit. Sanctus clita duo justo et tempor eirmod magna dolore erat amet", name: "Alexander Bell" },
-                  { img: "testimonial-3.jpg", title: "Budget Friendly", desc: "Diam amet diam et eos labore. Clita erat ipsum et lorem et sit, sed stet no labore lorem sit. Sanctus clita duo justo et tempor eirmod magna dolore erat amet", name: "Bradley Gordon" },
-                ].map((item, i) => (
-                  <div key={i} className="testimonial-item">
-                    <div className="row g-5 align-items-center">
-                      <div className="col-md-6">
-                        <div className="testimonial-img">
-                          <img className="img-fluid" src={`img/${item.img}`} alt="" />
-                        </div>
-                      </div>
-                      <div className="col-md-6">
-                        <div className="testimonial-text pb-5 pb-md-0">
-                          <h3>{item.title}</h3>
-                          <p>{item.desc}</p>
-                          <h5 className="mb-0">{item.name}</h5>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      {/* Testimonial End */}
-      {/* Newsletter Start */}
-      <div className="container-fluid bg-primary newsletter p-0">
-        <div className="container p-0">
-          <div className="row g-0 align-items-center">
-            <div className="col-md-5 ps-lg-0 text-start wow fadeIn" data-wow-delay="0.2s">
-              <img className="img-fluid w-100" src="img/newsletter.jpg" alt="" />
-            </div>
-            <div className="col-md-7 py-5 newsletter-text wow fadeIn" data-wow-delay="0.5s">
-              <div className="p-5">
-                <h1 className="mb-5">
-                  Subscribe the <span className="text-uppercase text-primary bg-white px-2">Newsletter</span>
-                </h1>
-                <div className="position-relative w-100 mb-2">
-                  <input className="form-control border-0 w-100 ps-4 pe-5" type="text" placeholder="Enter Your Email" style={{ height: 60 }} />
-                  <button type="button" className="btn shadow-none position-absolute top-0 end-0 mt-2 me-2">
-                    <i className="fa fa-paper-plane text-primary fs-4"></i>
-                  </button>
+
+      {/* Construction Process End */}
+      <hr></hr>
+      {/* Design Process Start */}
+      <div className="container py-5">
+        <h4 className="text-center mb-5" data-aos="fade-up">
+          Our Design Process
+        </h4>
+
+        <div className="timeline position-relative">
+          {/* Vertical Line */}
+          <div
+            className="position-absolute top-0 start-50 translate-middle-x h-100 border-start border-2 border-primary"
+            style={{ zIndex: 0 }}
+          ></div>
+
+          {[
+            { num: "01", title: "Site Plan", img: "/img/project-1.jpg" },
+            {
+              num: "02",
+              title: "Architectural Floor Plan",
+              img: "/img/project-2.jpg",
+            },
+            { num: "03", title: "3D Hall Layout", img: "/img/project-3.jpg" },
+            {
+              num: "04",
+              title: "Structural Drawing",
+              img: "/img/project-4.jpg",
+            },
+            {
+              num: "05",
+              title: "Elevation 3D Design",
+              img: "/img/project-5.jpg",
+            },
+            { num: "06", title: "Approval Drawing", img: "/img/project-6.jpg" },
+            {
+              num: "07",
+              title: "3D Interior Designs",
+              img: "/img/project-1.jpg",
+            },
+          ].map((step, i) => (
+            <div
+              key={i}
+              className={`timeline-item d-flex mb-5 justify-content-${
+                i % 2 === 0 ? "start" : "end"
+              }`}
+              data-aos={i % 2 === 0 ? "fade-right" : "fade-left"}
+              style={{ position: "relative", zIndex: 1 }}
+            >
+              {/* Dot */}
+              <div
+                className="position-absolute top-50 start-50 translate-middle bg-primary rounded-circle"
+                style={{ width: "20px", height: "20px", zIndex: 2 }}
+              ></div>
+
+              <div className="timeline-content bg-white shadow-sm text-center p-3 rounded w-48">
+                <div className="step-number text-primary fw-bold display-6">
+                  {step.num}
                 </div>
-                <p className="mb-0">Diam sed sed dolor stet amet eirmod</p>
+                <h6 className="mt-2 mb-3">{step.title}</h6>
+                <div className="ratio ratio-16x9">
+                  <Image
+                    src={step.img}
+                    alt={step.title}
+                    width={500}
+                    height={300}
+                    className="img-fluid rounded"
+                  />
+                </div>
               </div>
             </div>
-          </div>
+          ))}
+        </div>
+
+        <div className="text-center mt-4">
+          <i className="fa-solid fa-chevron-down fs-3 text-muted"></i>
         </div>
       </div>
-      {/* Newsletter End */}
+
+      {/* Design Process End */}
     </>
   );
-};
-export default HomePage;
+}
