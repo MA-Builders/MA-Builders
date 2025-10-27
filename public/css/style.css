@@ -116,7 +116,9 @@
         opacity: 1 ;
     }
 }
-
+.navbar.border-bottom{
+    border-bottom:none !important;
+}
 
 /*** Hero Header ***/
 .hero-header {
