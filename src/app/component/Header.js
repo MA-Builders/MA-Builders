@@ -6,13 +6,12 @@ import { usePathname } from "next/navigation";
 
 export default function Header() {
   const pathname = usePathname();
-  // Optional: hide spinner after page load
   useEffect(() => {
     const spinner = document.getElementById("spinner");
     if (spinner) {
       setTimeout(() => {
         spinner.classList.remove("show");
-      }, 500); // hide after 0.5s
+      }, 500); 
     }
   }, []);
 
@@ -31,7 +30,6 @@ export default function Header() {
           <span className="sr-only">Loading...</span>
         </div>
       </div>
-
       {/* Navbar */}
       <div className="container-fluid sticky-top">
         <div className="container">
@@ -45,7 +43,6 @@ export default function Header() {
                 className="d-inline-block align-text-top mt-0"
               />
             </Link>
-
             <button
               type="button"
               className="navbar-toggler ms-auto me-0"
@@ -57,7 +54,6 @@ export default function Header() {
             >
               <span className="navbar-toggler-icon"></span>
             </button>
-
             <div className="collapse navbar-collapse" id="navbarCollapse">
               <div className="navbar-nav ms-auto">
                 <Link
@@ -144,14 +140,14 @@ export default function Header() {
                   </div>
                 </div>
                 <Link
-                  href="/blog"
+                  href="/portfolio"
                   className={
-                    pathname === "/blog"
+                    pathname === "/portfolio"
                       ? "nav-item nav-link active"
                       : "nav-item nav-link"
                   }
                 >
-                  Blogs
+                  Portfolio
                 </Link>
                 <Link
                   href="/contact-us"

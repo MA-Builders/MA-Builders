@@ -150,7 +150,7 @@ export default function OurTeam() {
       {/* Team Start */}
       <div className="container-fluid bg-light py-5">
         <div className="container py-5">
-          <h1 className="mb-5">
+          <h1 className="mb-5 text-center">
             Our Professional{" "}
             <span className="text-uppercase text-primary bg-light px-2">
               Designers
@@ -202,7 +202,7 @@ export default function OurTeam() {
       </div>
       {/* Team End */}
       {/* Newsletter Start */}
-      <div className="container-fluid bg-primary newsletter p-0">
+      {/* <div className="container-fluid bg-primary newsletter p-0">
         <div className="container p-0">
           <div className="row g-0 align-items-center">
             <div
@@ -247,7 +247,7 @@ export default function OurTeam() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
       {/* Newsletter End */}
     </>
   );
