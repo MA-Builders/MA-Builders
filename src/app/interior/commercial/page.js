@@ -101,13 +101,13 @@ export default function IntCommercial() {
       <div className="container-fluid py-5">
         <div className="container py-5">
           <div className="text-center wow fadeIn" data-wow-delay="0.1s">
-            <h1 className="mb-5">
+            <h1 className="mb-5 text-gradient">
               Our{" "}
-              <span className="text-uppercase text-primary bg-light px-2">
+              <span className="text-uppercase text-gold bg-light px-2">
                 Commercial Interiors
               </span>
             </h1>
-            <p className="text-muted mb-5">
+            <p className="text-gradient mb-5">
               Explore expert insights, design trends, and construction tips from
               our professional architects.
             </p>
@@ -133,8 +133,8 @@ export default function IntCommercial() {
                     </div>
                   </div>
                   <div className="card-body p-4">
-                    <h5 className="card-title mb-3 fw-bold">{blog.title}</h5>
-                    <p className="card-text text-muted">{blog.description}</p>
+                    <h5 className="card-title mb-3 fw-bold text-gradient">{blog.title}</h5>
+                    <p className="card-text text-gradient">{blog.description}</p>
                     <a
                       href="#!"
                       className="read-more-btn-custom btn rounded-pill mt-3"
@@ -142,11 +142,11 @@ export default function IntCommercial() {
                       Read More
                     </a>
                   </div>
-                  <div className="card-footer bg-light d-flex justify-content-between align-items-center border-0 rounded-bottom-4">
-                    <small className="text-muted">
+                  <div className="card-footer bg-gradient d-flex justify-content-between align-items-center border-0 rounded-bottom-4">
+                    <small className="text-gold">
                       <i className="fa fa-calendar-alt me-2"></i> {blog.date}
                     </small>
-                    <small className="text-muted">
+                    <small className="text-gold">
                       <i className="fa fa-user me-2"></i> {blog.author}
                     </small>
                   </div>

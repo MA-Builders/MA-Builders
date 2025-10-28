@@ -23,7 +23,7 @@ export default function Header() {
         className="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center"
       >
         <div
-          className="spinner-grow text-primary"
+          className="spinner-grow text-gradient"
           style={{ width: "3rem", height: "3rem" }}
           role="status"
         >
@@ -31,7 +31,19 @@ export default function Header() {
         </div>
       </div>
       {/* Navbar */}
-      <div className="container-fluid sticky-top">
+      <div className="container-fluid sticky-top"style={
+    pathname === "/"
+      ? 
+      {
+          background: "rgba(0, 0, 0, 0.6)",
+          backdropFilter: "blur(2px)",
+          WebkitBackdropFilter: "blur(6px)",
+          transition: "background 0.3s ease-in-out, backdrop-filter 0.3s ease-in-out",
+        }
+      : {
+          transition: "background 0.3s ease-in-out, backdrop-filter 0.3s ease-in-out",
+        }
+  } >
         <div className="container">
           <nav className="navbar navbar-expand-lg navbar-light border-bottom border-2 border-white">
             <Link href="/" className="navbar-brand text-decoration-none">

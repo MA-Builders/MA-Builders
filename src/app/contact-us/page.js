@@ -37,9 +37,10 @@ export default function ContactUsPage() {
         <div className="container py-5">
           {/* Section Title */}
           <div className="text-center wow fadeIn" data-wow-delay="0.1s">
-            <h1 className="mb-5">
-              <span className="text-uppercase text-primary bg-light px-2">
-                Contact Us
+             <h1 className="mb-5 text-gradient">
+              Contact{" "}
+              <span className="text-gold bg-light px-2">
+                Us
               </span>
             </h1>
           </div>
@@ -48,8 +49,8 @@ export default function ContactUsPage() {
           <div className="row g-5 justify-content-center align-items-center">
             {/* Contact Form */}
             <div className="col-lg-5 wow fadeIn text-center" data-wow-delay="0.3s">
-              <h5 className="text-primary text-uppercase mb-3">Get In Touch</h5>
-              <h1 className="mb-4">Contact For Any Query</h1>
+              <h5 className="text-gradient text-uppercase mb-3">Get In Touch</h5>
+              <h1 className="mb-4 text-gradient">Contact For Any Query</h1>
               <a
                 href="/img/contact-map.jpg" 
                 download="MA_Builders_Contact_Map.jpg" 
@@ -75,7 +76,7 @@ export default function ContactUsPage() {
                 working contact form with Ajax & PHP in a few minutes. Just copy
                 and paste the files, add a little code and you're done.
               </p>
-              <form className="pt-5">
+              <form className="pt-5 text-gradient">
                 <div className="row g-3">
                   <div className="col-md-6">
                     <div className="form-floating">
