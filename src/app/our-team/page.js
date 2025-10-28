@@ -9,7 +9,9 @@ export default function OurTeam() {
         <div className="container py-5">
           <div className="row g-5 align-items-center mb-5">
             <div className="col-lg-6 text-center text-lg-start">
-              <h1 className="display-1 mb-0 animated slideInLeft text-gradient">About Us</h1>
+              <h1 className="display-1 mb-0 animated slideInLeft text-gradient">
+                About Us
+              </h1>
             </div>
             <div className="col-lg-6 animated slideInRight">
               <nav aria-label="breadcrumb">
@@ -80,7 +82,10 @@ export default function OurTeam() {
                 ].map((group, i) => (
                   <div key={i} className="col-sm-6">
                     {group.map((item, j) => (
-                      <h6 key={j} className={`mb-${j === 0 ? "3" : "0"} text-gradient`}>
+                      <h6
+                        key={j}
+                        className={`mb-${j === 0 ? "3" : "0"} text-gradient`}
+                      >
                         <i className="fa fa-check text-primary me-2"></i>
                         {item}
                       </h6>
@@ -148,7 +153,58 @@ export default function OurTeam() {
       </div>
       {/* Feature End */}
       {/* Team Start */}
-     
+      <div className="container-fluid bg-light py-5">
+        <div className="container py-5">
+          <h1 className="mb-5 text-center text-gradient">
+            Our Professional{" "}
+            <span className="text-uppercase text-gold bg-light px-2">
+              Designers
+            </span>
+          </h1>
+          <div className="row g-4">
+            {[
+              { img: "team-1.jpg", name: "Boris Johnson" },
+              { img: "team-2.jpg", name: "Donald Pakura" },
+              { img: "team-3.jpg", name: "Bradley Gordon" },
+              { img: "team-4.jpg", name: "Alexander Bell" },
+            ].map((member, i) => (
+              <div
+                key={i}
+                className="col-md-6 col-lg-3 wow fadeIn"
+                data-wow-delay={`${0.1 + i * 0.2}s`}
+              >
+                <div className="team-item position-relative overflow-hidden">
+                  <img
+                    className="img-fluid w-100"
+                    src={`img/${member.img}`}
+                    alt=""
+                  />
+                  <div className="team-overlay">
+                    <small className="mb-2">Architect</small>
+                    <h4 className="lh-base text-light">{member.name}</h4>
+                    <div className="d-flex justify-content-center">
+                      {[
+                        "facebook-f",
+                        "twitter",
+                        "instagram",
+                        "linkedin-in",
+                      ].map((icon, j) => (
+                        <a
+                          key={j}
+                          className="btn btn-outline-primary btn-sm-square border-2 me-2"
+                          href="#!"
+                        >
+                          <i className={`fab fa-${icon}`}></i>
+                        </a>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
       {/* Team End */}
       {/* Newsletter Start */}
       {/* <div className="container-fluid bg-primary newsletter p-0">
