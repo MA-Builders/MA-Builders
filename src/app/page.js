@@ -23,7 +23,7 @@ export default function HomePage() {
 	return (
 		<>
 			{/* Hero Start */}
-			<div className="container-fluid p-0 position-relative hero-header">
+			<div className="container-fluid p-0 position-relative hero-header-home">
 				<video ref={videoRef} autoPlay loop muted={muted} playsInline className="w-100 vh-100 object-fit-cover">
 					<source src="/img/kamadhenu.mp4" type="video/mp4" />
 					Your browser does not support the video tag.
