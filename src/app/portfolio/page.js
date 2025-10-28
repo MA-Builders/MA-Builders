@@ -65,6 +65,38 @@ const blogs = [
 ];
 
 export default function BlogPage() {
+   const projects = [
+    {
+      id: 1,
+      title: "Luxury Villa",
+      location: "Coimbatore",
+      type: "Residential",
+      date: "Completed - June 2024",
+      description:
+        "A modern villa featuring minimalistic design with natural lighting and sustainable materials.",
+      images: ["/img/project-1.jpg", "/img/project-2.jpg", "/img/project-3.jpg"],
+    },
+    {
+      id: 2,
+      title: "GreenTech Office Tower",
+      location: "Chennai",
+      type: "Commercial",
+      date: "Ongoing - Expected 2025",
+      description:
+        "High-rise corporate office designed with energy-efficient glass facade and smart interiors.",
+      images: ["/img/project-4.jpg", "/img/project-5.jpg"],
+    },
+    {
+      id: 3,
+      title: "Skyline Apartments",
+      location: "Madurai",
+      type: "Residential",
+      date: "Completed - March 2023",
+      description:
+        "A 12-storey residential project with modern amenities, landscaped gardens and rooftop leisure zone.",
+      images: ["/img/project-6.jpg", "/img/project-5.jpg"],
+    },
+  ];
   return (
     <>
       {/* Hero Section */}
@@ -72,18 +104,18 @@ export default function BlogPage() {
         <div className="container py-5">
           <div className="row g-5 align-items-center mb-5">
             <div className="col-lg-6 text-center text-lg-start">
-              <h1 className="display-1 mb-0 animated slideInLeft">Portfolio</h1>
+              <h1 className="display-1 mb-0 animated slideInLeft text-gradient">Portfolio</h1>
             </div>
             <div className="col-lg-6 animated slideInRight">
               <nav aria-label="breadcrumb">
                 <ol className="breadcrumb justify-content-center justify-content-lg-end mb-0">
                   <li className="breadcrumb-item">
-                    <a className="text-primary" href="/">
+                    <a className="text-gold" href="/">
                       Home
                     </a>
                   </li>
                   <li
-                    className="breadcrumb-item text-secondary active"
+                    className="breadcrumb-item text-gradient active"
                     aria-current="page"
                   >
                     Portfolio
@@ -96,63 +128,77 @@ export default function BlogPage() {
       </div>
 
       {/* Blog Section */}
-      <div className="container-fluid py-5">
-        <div className="container py-5">
-          <div className="text-center wow fadeIn" data-wow-delay="0.1s">
-            <h1 className="mb-5">
-              Latest{" "}
-              <span className="text-uppercase text-primary bg-light px-2">
-                Blog Posts
-              </span>
-            </h1>
-            <p className="text-muted mb-5">
-              Explore expert insights, design trends, and construction tips from
-              our professional architects.
-            </p>
-          </div>
+      <div className="container py-5">
+        <div className="row gy-5">
+          {projects.map((project) => (
+            <div className="col-lg-4 col-md-6" key={project.id}>
+              <div className="card border-0 shadow-lg h-100 rounded-4 overflow-hidden">
+                {/* Carousel */}
+                <div
+                  id={`carousel-${project.id}`}
+                  className="carousel slide"
+                  data-bs-ride="carousel"
+                >
+                  <div className="carousel-inner">
+                    {project.images.map((img, index) => (
+                      <div
+                        key={index}
+                        className={`carousel-item ${index === 0 ? "active" : ""}`}
+                      >
+                        <Image
+                          src={img}
+                          alt={project.title}
+                          width={600}
+                          height={400}
+                          className="d-block w-100"
+                          style={{ objectFit: "cover" }}
+                        />
+                      </div>
+                    ))}
+                  </div>
+                  <button
+                    className="carousel-control-prev"
+                    type="button"
+                    data-bs-target={`#carousel-${project.id}`}
+                    data-bs-slide="prev"
+                  >
+                    <span
+                      className="carousel-control-prev-icon bg-dark rounded-circle p-2"
+                      aria-hidden="true"
+                    ></span>
+                    <span className="visually-hidden">Previous</span>
+                  </button>
+                  <button
+                    className="carousel-control-next"
+                    type="button"
+                    data-bs-target={`#carousel-${project.id}`}
+                    data-bs-slide="next"
+                  >
+                    <span
+                      className="carousel-control-next-icon bg-dark rounded-circle p-2"
+                      aria-hidden="true"
+                    ></span>
+                    <span className="visually-hidden">Next</span>
+                  </button>
+                </div>
 
-          <div className="row g-5">
-            {blogs.map((blog, index) => (
-              <div
-                key={blog.id}
-                className="col-lg-4 col-md-6 wow fadeIn"
-                data-wow-delay={`${0.1 + index * 0.2}s`}
-              >
-                <div className="card border-0 shadow-sm h-100 overflow-hidden blog-card rounded-4">
-                  <div className="position-relative rounded-top-4 overflow-hidden">
-                    <Image
-                      src={blog.img}
-                      alt={blog.title}
-                      className="card-img-top"
-                      width={600}
-                      height={400}
-                    />
-                    <div className="category-badge-custom position-absolute top-0 start-0 px-3 py-1">
-                      {blog.category}
-                    </div>
-                  </div>
-                  <div className="card-body p-4">
-                    <h5 className="card-title mb-3 fw-bold">{blog.title}</h5>
-                    <p className="card-text text-muted">{blog.description}</p>
-                    <a
-                      href="#!"
-                      className="read-more-btn-custom btn rounded-pill mt-3"
-                    >
-                      Read More
-                    </a>
-                  </div>
-                  <div className="card-footer bg-light d-flex justify-content-between align-items-center border-0 rounded-bottom-4">
-                    <small className="text-muted">
-                      <i className="fa fa-calendar-alt me-2"></i> {blog.date}
-                    </small>
-                    <small className="text-muted">
-                      <i className="fa fa-user me-2"></i> {blog.author}
-                    </small>
-                  </div>
+                {/* Card Body */}
+                <div className="card-body">
+                  <h5 className="card-title fw-bold">{project.title}</h5>
+                  <p className="text-muted mb-1">
+                    <strong>Location:</strong> {project.location}
+                  </p>
+                  <p className="text-muted mb-1">
+                    <strong>Type:</strong> {project.type}
+                  </p>
+                  <p className="text-muted mb-2">
+                    <strong>Status:</strong> {project.date}
+                  </p>
+                  <p className="small text-secondary">{project.description}</p>
                 </div>
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
       </div>
     </>

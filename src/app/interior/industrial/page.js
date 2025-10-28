@@ -72,7 +72,7 @@ export default function IntIndus() {
         <div className="container py-5">
           <div className="row g-5 align-items-center mb-5">
             <div className="col-lg-6 text-center text-lg-start">
-              <h2 className="display-1 mb-0 animated slideInLeft">
+              <h2 className="display-1 mb-0 animated slideInLeft text-gradient">
                 Industrial
               </h2>
             </div>
@@ -80,12 +80,12 @@ export default function IntIndus() {
               <nav aria-label="breadcrumb">
                 <ol className="breadcrumb justify-content-center justify-content-lg-end mb-0">
                   <li className="breadcrumb-item">
-                    <a className="text-primary" href="/">
+                    <a className="text-gold" href="/">
                       Home
                     </a>
                   </li>
                   <li
-                    className="breadcrumb-item text-secondary active"
+                    className="breadcrumb-item text-gradient active"
                     aria-current="page"
                   >
                     Industrial

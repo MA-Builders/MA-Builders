@@ -9,18 +9,18 @@ export default function OurTeam() {
         <div className="container py-5">
           <div className="row g-5 align-items-center mb-5">
             <div className="col-lg-6 text-center text-lg-start">
-              <h1 className="display-1 mb-0 animated slideInLeft">About</h1>
+              <h1 className="display-1 mb-0 animated slideInLeft text-gradient">About Us</h1>
             </div>
             <div className="col-lg-6 animated slideInRight">
               <nav aria-label="breadcrumb">
                 <ol className="breadcrumb justify-content-center justify-content-lg-end mb-0">
                   <li className="breadcrumb-item">
-                    <a className="text-primary" href="/">
+                    <a className="text-gold" href="/">
                       Home
                     </a>
                   </li>
                   <li
-                    className="breadcrumb-item text-secondary active"
+                    className="breadcrumb-item text-gradient active"
                     aria-current="page"
                   >
                     About
@@ -47,8 +47,8 @@ export default function OurTeam() {
                     src="img/about-2.jpg"
                     alt=""
                   />
-                  <div className="h-25 d-flex align-items-center text-center bg-primary px-4">
-                    <h4 className="text-white lh-base mb-0">
+                  <div className="h-25 d-flex align-items-center text-center bg-gradient px-4">
+                    <h4 className="text-gold lh-base mb-0">
                       Award Winning Studio Since 1990
                     </h4>
                   </div>
@@ -56,19 +56,19 @@ export default function OurTeam() {
               </div>
             </div>
             <div className="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
-              <h1 className="mb-5">
-                <span className="text-uppercase text-primary bg-light px-2">
+              <h1 className="mb-5 text-gradient">
+                <span className="text-uppercase text-gold bg-light px-2">
                   History
                 </span>{" "}
                 of Our Creation
               </h1>
-              <p className="mb-4">
+              <p className="mb-4 text-gradient">
                 Tempor erat elitr rebum at clita. Diam dolor diam ipsum et
                 tempor sit. Aliqu diam amet diam et eos labore. Clita erat ipsum
                 et lorem et sit, sed stet no labore lorem sit. Sanctus clita duo
                 justo et tempor eirmod magna dolore erat amet
               </p>
-              <p className="mb-5">
+              <p className="mb-5 text-gradient">
                 Aliqu diam amet diam et eos labore. Clita erat ipsum et lorem et
                 sit, sed stet no labore lorem sit. Sanctus clita duo justo et
                 tempor.
@@ -80,7 +80,7 @@ export default function OurTeam() {
                 ].map((group, i) => (
                   <div key={i} className="col-sm-6">
                     {group.map((item, j) => (
-                      <h6 key={j} className={`mb-${j === 0 ? "3" : "0"}`}>
+                      <h6 key={j} className={`mb-${j === 0 ? "3" : "0"} text-gradient`}>
                         <i className="fa fa-check text-primary me-2"></i>
                         {item}
                       </h6>
@@ -89,7 +89,7 @@ export default function OurTeam() {
                 ))}
               </div>
               <div className="d-flex align-items-center mt-5">
-                <a className="btn btn-primary px-4 me-2" href="#!">
+                <a className="btn btn-primary px-4 me-2 bg-gradient" href="#!">
                   Read More
                 </a>
                 {["facebook-f", "twitter", "instagram", "linkedin-in"].map(
@@ -115,12 +115,12 @@ export default function OurTeam() {
           <div className="text-center wow fadeIn" data-wow-delay="0.1s">
             <h1 className="mb-5">
               Why People{" "}
-              <span className="text-uppercase text-primary bg-light px-2">
+              <span className="text-uppercase text-gold bg-light px-2">
                 Choose Us
               </span>
             </h1>
           </div>
-          <div className="row g-5 align-items-center text-center">
+          <div className="row g-5 align-items-center text-center ">
             {[
               { icon: "fa-calendar-alt", title: "25+ Years Experience" },
               { icon: "fa-tasks", title: "Best Interior Design" },
@@ -135,7 +135,7 @@ export default function OurTeam() {
                 data-wow-delay={`${0.1 + i * 0.2}s`}
               >
                 <i className={`fa ${feature.icon} fa-5x text-primary mb-4`}></i>
-                <h4>{feature.title}</h4>
+                <h4 className="text-gradient">{feature.title}</h4>
                 <p className="mb-0">
                   Clita erat ipsum et lorem et sit, sed stet no labore lorem
                   sit. Sanctus clita duo justo et tempor eirmod magna dolore
@@ -150,9 +150,9 @@ export default function OurTeam() {
       {/* Team Start */}
       <div className="container-fluid bg-light py-5">
         <div className="container py-5">
-          <h1 className="mb-5 text-center">
+          <h1 className="mb-5 text-center text-gradient">
             Our Professional{" "}
-            <span className="text-uppercase text-primary bg-light px-2">
+            <span className="text-uppercase text-gold bg-light px-2">
               Designers
             </span>
           </h1>
