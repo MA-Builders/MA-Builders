@@ -11,7 +11,7 @@ export default function Header() {
     if (spinner) {
       setTimeout(() => {
         spinner.classList.remove("show");
-      }, 500); 
+      }, 500);
     }
   }, []);
 
@@ -31,19 +31,23 @@ export default function Header() {
         </div>
       </div>
       {/* Navbar */}
-      <div className="container-fluid sticky-top"style={
-    pathname === "/"
-      ? 
-      {
-          background: "rgba(0, 0, 0, 0.6)",
-          backdropFilter: "blur(2px)",
-          WebkitBackdropFilter: "blur(6px)",
-          transition: "background 0.3s ease-in-out, backdrop-filter 0.3s ease-in-out",
+      <div
+        className="container-fluid sticky-top"
+        style={
+          pathname === "/"
+            ? {
+                background: "rgba(245, 245, 245, 0.6)",
+                backdropFilter: "blur(8px)",
+                WebkitBackdropFilter: "blur(8px)",
+                transition:
+                  "background 0.3s ease-in-out, backdrop-filter 0.3s ease-in-out",
+              }
+            : {
+                transition:
+                  "background 0.3s ease-in-out, backdrop-filter 0.3s ease-in-out",
+              }
         }
-      : {
-          transition: "background 0.3s ease-in-out, backdrop-filter 0.3s ease-in-out",
-        }
-  } >
+      >
         <div className="container">
           <nav className="navbar navbar-expand-lg navbar-light border-bottom border-2 border-white">
             <Link href="/" className="navbar-brand text-decoration-none">
@@ -100,29 +104,29 @@ export default function Header() {
                   </Link>
                   <div className="dropdown-menu bg-light mt-2 text-center">
                     <Link
+                      href="/construction/residential"
+                      className={`dropdown-item ${
+                        pathname === "/construction/residential" ? "active" : ""
+                      }`}
+                    >
+                      Residental
+                    </Link>
+                    <Link
                       href="/construction/commercial"
-                       className={`dropdown-item ${
-                    pathname === "/construction/commercial" ? "active" : ""
-                  }`}
+                      className={`dropdown-item ${
+                        pathname === "/construction/commercial" ? "active" : ""
+                      }`}
                     >
                       Commercial
                     </Link>
-                    <Link
+                    {/* <Link
                       href="/construction/industrial"
                        className={`dropdown-item ${
                     pathname === "/construction/industrial" ? "active" : ""
                   }`}
                     >
                       Industrial
-                    </Link>
-                    <Link
-                      href="/construction/residential"
-                       className={`dropdown-item ${
-                    pathname === "/construction/residential" ? "active" : ""
-                  }`}
-                    >
-                      Residental
-                    </Link>
+                    </Link> */}
                   </div>
                 </div>
                 <div className="nav-item dropdown">
@@ -134,21 +138,27 @@ export default function Header() {
                     Interiors +
                   </Link>
                   <div className="dropdown-menu bg-light mt-2 text-center">
-                    <Link href="/interior/commercial"  className={`dropdown-item ${
-                    pathname === "/interior/commercial" ? "active" : ""
-                  }`}>
+                    <Link
+                      href="/interior/residential"
+                      className={`dropdown-item ${
+                        pathname === "/interior/residential" ? "active" : ""
+                      }`}
+                    >
+                      Residental
+                    </Link>
+                    <Link
+                      href="/interior/commercial"
+                      className={`dropdown-item ${
+                        pathname === "/interior/commercial" ? "active" : ""
+                      }`}
+                    >
                       Commercial
                     </Link>
-                    <Link href="/interior/industrial"  className={`dropdown-item ${
+                    {/* <Link href="/interior/industrial"  className={`dropdown-item ${
                     pathname === "/interior/industrial" ? "active" : ""
                   }`}>
                       Industrial
-                    </Link>
-                    <Link href="/interior/residential"  className={`dropdown-item ${
-                    pathname === "/interior/residential" ? "active" : ""
-                  }`}>
-                      Residental
-                    </Link>
+                    </Link> */}
                   </div>
                 </div>
                 <Link

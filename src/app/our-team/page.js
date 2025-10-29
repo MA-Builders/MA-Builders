@@ -51,7 +51,7 @@ export default function OurTeam() {
                   />
                   <div className="h-25 d-flex align-items-center text-center bg-gradient px-4">
                     <h4 className="text-gold lh-base mb-0">
-                      Award Winning Studio Since 1990
+                      Award Winning Studio Since 2019
                     </h4>
                   </div>
                 </div>
@@ -65,15 +65,17 @@ export default function OurTeam() {
                 of Our Creation
               </h1>
               <p className="mb-4 text-gradient">
-                Tempor erat elitr rebum at clita. Diam dolor diam ipsum et
-                tempor sit. Aliqu diam amet diam et eos labore. Clita erat ipsum
-                et lorem et sit, sed stet no labore lorem sit. Sanctus clita duo
-                justo et tempor eirmod magna dolore erat amet
+                Our journey began with a simple vision — to design and build
+                spaces that blend beauty, comfort, and functionality. Over the
+                years, we've grown into a trusted name known for delivering
+                innovative architectural solutions and top-quality
+                craftsmanship.
               </p>
               <p className="mb-5 text-gradient">
-                Aliqu diam amet diam et eos labore. Clita erat ipsum et lorem et
-                sit, sed stet no labore lorem sit. Sanctus clita duo justo et
-                tempor.
+                From residential projects to commercial spaces, our experienced
+                team ensures every detail reflects precision and passion. We
+                take pride in creating long-lasting designs that bring our
+                client's dreams to life.
               </p>
               <div className="row g-3">
                 {[
@@ -117,35 +119,59 @@ export default function OurTeam() {
       {/* Feature Start */}
       <div className="container-fluid py-5">
         <div className="container">
-          <div className="text-center wow fadeIn" data-wow-delay="0.1s">
-            <h1 className="mb-5 text-gradient">
+          <div className="text-center mb-5" data-aos="fade-in">
+            <h1 className="text-gradient">
               Why People{" "}
-              <span className="text-uppercase text-gold bg-light px-2">
+              <span className="text-uppercase bg-light text-gold px-2">
                 Choose Us
               </span>
             </h1>
           </div>
-          <div className="row g-5 align-items-center text-center ">
+          <div className="row g-5 text-center">
             {[
-              { icon: "fa-calendar-alt", title: "25+ Years Experience" },
-              { icon: "fa-tasks", title: "Best Interior Design" },
-              { icon: "fa-pencil-ruler", title: "Innovative Architects" },
-              { icon: "fa-user", title: "Customer Satisfaction" },
-              { icon: "fa-hand-holding-usd", title: "Budget Friendly" },
-              { icon: "fa-check", title: "Sustainable Material" },
+              {
+                icon: "fa-calendar-alt",
+                title: "10+ Years Experience",
+                description:
+                  "We have built trust with a decade of hands-on experience in construction and design.",
+              },
+              {
+                icon: "fa-tasks",
+                title: "Best Interior Design",
+                description:
+                  "Our expert designers create modern, elegant, and functional living spaces.",
+              },
+              {
+                icon: "fa-pencil-ruler",
+                title: "Innovative Architects",
+                description:
+                  "We bring creative architectural ideas to life with precision and style.",
+              },
+              {
+                icon: "fa-user",
+                title: "Customer Satisfaction",
+                description:
+                  "Your happiness is our top priority — we deliver exactly what you envision.",
+              },
+              {
+                icon: "fa-hand-holding-usd",
+                title: "Budget Friendly",
+                description:
+                  "Quality construction and design that fits your budget without compromise.",
+              },
+              {
+                icon: "fa-check",
+                title: "Sustainable Material",
+                description:
+                  "We use eco-friendly and durable materials for a greener tomorrow.",
+              },
             ].map((feature, i) => (
-              <div
-                key={i}
-                className="col-md-6 col-lg-4 wow fadeIn"
-                data-wow-delay={`${0.1 + i * 0.2}s`}
-              >
-                <i className={`fa ${feature.icon} fa-5x text-primary mb-4`}></i>
+              <div key={i} className="col-md-6 col-lg-4" data-aos="fade-in">
+                <i
+                  className={`fa ${feature.icon} fa-5x text-primary mb-4 text-gradient`}
+                ></i>
                 <h4 className="text-gradient">{feature.title}</h4>
-                <p className="mb-0">
-                  Clita erat ipsum et lorem et sit, sed stet no labore lorem
-                  sit. Sanctus clita duo justo et tempor eirmod magna dolore
-                  erat amet
-                </p>
+                <p className="mb-0 text-gradient">{feature.description}</p>
               </div>
             ))}
           </div>

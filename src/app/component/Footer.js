@@ -20,10 +20,10 @@ export default function Footer() {
                 />
               </Link>
               <p className="mb-0 pt-3 text-gradient">
-                Tempor erat elitr rebum at clita. Diam dolor diam ipsum et
-                tempor sit. Aliqu diam amet diam et eos labore. Clita erat ipsum
-                et lorem et sit, sed stet no labore lorem sit. Sanctus clita duo
-                justo et tempor.
+                At MA Builders, we combine expert craftsmanship with innovative
+                design to deliver lasting results. <br/>From residential homes to
+                commercial spaces, our team ensures every project reflects
+                quality, trust, and attention to detail.
               </p>
             </div>
 
@@ -78,10 +78,10 @@ export default function Footer() {
             {/* Popular Links */}
             <div className="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.5s">
               <h5 className="text-gold mb-4">Popular Links</h5>
-              <Link href="#!" className="btn btn-link">
+              <Link href="/our-team" className="btn btn-link">
                 About Us
               </Link>
-              <Link href="#!" className="btn btn-link">
+              <Link href="contact-us" className="btn btn-link">
                 Contact Us
               </Link>
               <Link href="#!" className="btn btn-link">
@@ -95,19 +95,19 @@ export default function Footer() {
             <div className="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.7s">
               <h5 className="text-gold mb-4">Our Services</h5>
               <Link href="#!" className="btn btn-link">
-                Interior Design
-              </Link>
-              <Link href="#!" className="btn btn-link">
                 Project Planning
               </Link>
               <Link href="#!" className="btn btn-link">
-                Renovation
+                Civil Work
               </Link>
               <Link href="#!" className="btn btn-link">
-                Implement
+                Interior Design
               </Link>
               <Link href="#!" className="btn btn-link">
                 Landscape Design
+              </Link>
+              <Link href="#!" className="btn btn-link">
+                Renovation
               </Link>
             </div>
           </div>
@@ -117,8 +117,7 @@ export default function Footer() {
           <div className="copyright">
             <div className="row">
               <div className="col-md-6 text-center text-gold text-md-start mb-3 mb-md-0">
-                &copy; 2025 MA Builders |
-                All Rights Reserved.  
+                &copy; 2025 MA Builders | All Rights Reserved.
               </div>
               <div className="col-md-6 text-center text-gold text-md-end">
                 Designed By CloudLabel.
