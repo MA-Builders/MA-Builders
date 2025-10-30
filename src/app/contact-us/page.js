@@ -8,7 +8,7 @@ export default function ContactUsPage() {
         <div className="container py-5">
           <div className="row g-5 align-items-center mb-5">
             <div className="col-lg-6 text-center text-lg-start">
-              <h1 className="display-1 mb-0 animated slideInLeft text-gradient">
+              <h1 className="display-1 mb-0 animated slideInLeft text-gradient ml-5">
                 Contact Us
               </h1>
             </div>

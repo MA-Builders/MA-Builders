@@ -154,7 +154,7 @@ export default function HomePage() {
               <div className="step-number text-gradient fw-bold display-6">
                 01
               </div>
-              <h6 className="mt-2 mb-3 text-gradient">Site Verification</h6>
+              <h6 className="mt-2 mb-3 text-gradient">Site Visit</h6>
 
               <div
                 id="carouselSitePlan"

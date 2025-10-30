@@ -36,7 +36,7 @@ export default function Header() {
         style={
           pathname === "/"
             ? {
-                background: "rgba(245, 245, 245, 0.6)",
+                background: "rgba(245, 245, 245, 0.5)",
                 backdropFilter: "blur(8px)",
                 WebkitBackdropFilter: "blur(8px)",
                 transition:
