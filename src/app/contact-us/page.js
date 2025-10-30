@@ -4,13 +4,11 @@ export default function ContactUsPage() {
   return (
     <>
       {/* Hero Start */}
-      <div className="container-fluid pb-5 hero-header bg-light mb-5">
-        <div className="container py-5">
-          <div className="row g-5 align-items-center mb-5">
+      <div className="row g-5 align-items-center mb-5">
             <div className="col-lg-6 text-center text-lg-start">
-              <h1 className="display-1 mb-0 animated slideInLeft text-gradient ml-5">
+              <h3 className="display-6 mb-0 animated slideInLeft text-gradient ml-5">
                 Contact Us
-              </h1>
+              </h3>
             </div>
             <div className="col-lg-6 animated slideInRight">
               <nav aria-label="breadcrumb">
@@ -30,6 +28,8 @@ export default function ContactUsPage() {
               </nav>
             </div>
           </div>
+      <div className="container-fluid pb-5 hero-header bg-light mb-5">
+        <div className="container py-5">
         </div>
       </div>
       {/* Hero End */}
