@@ -10,7 +10,6 @@ export default function HomePage() {
   const videoRef = useRef(null);
   const [muted, setMuted] = useState(true);
 
-
   const toggleMute = () => {
     if (videoRef.current) {
       videoRef.current.muted = !videoRef.current.muted;
@@ -20,11 +19,9 @@ export default function HomePage() {
 
   useEffect(() => {
     AOS.init({ duration: 500, easing: "ease-in-out" });
-    AOS.init({ duration: 500, easing: "ease-in-out" });
   }, []);
   return (
     <>
-      {/* Hero Start */}
       {/* Hero Start */}
       <div className="container-fluid p-0 position-relative hero-header-home">
         <video
@@ -41,7 +38,6 @@ export default function HomePage() {
         <div className="position-absolute top-50 start-50 translate-middle text-center text-white px-3">
           <h1
             className="fw-bold mb-4 display-3 display-md-1 text-white"
-            className="fw-bold mb-4 display-3 display-md-1 text-white"
             data-aos="fade-up"
             style={{ lineHeight: "1.2" }}
           >
@@ -49,11 +45,9 @@ export default function HomePage() {
           </h1>
           <h5
             className="d-inline-block border border-2 border-light py-2 px-4 mb-0 fs-6 fs-md-5 text-white"
-            className="d-inline-block border border-2 border-light py-2 px-4 mb-0 fs-6 fs-md-5 text-white"
             data-aos="fade-up"
             data-aos-delay="200"
           >
-            An Award Winning Studio Since 1990
             An Award Winning Studio Since 1990
           </h5>
         </div>
@@ -69,21 +63,15 @@ export default function HomePage() {
       {/* Hero End */}
       {/* Feature Start */}
       <div className="container-fluid py-5">
-      {/* Hero End */}
-      {/* Feature Start */}
-      <div className="container-fluid py-5">
         <div className="container">
           <div className="text-center mb-5" data-aos="fade-in">
             <h1 className="text-gradient">
-            <h1 className="text-gradient">
               Why People{" "}
-              <span className="text-uppercase bg-light text-gold px-2">
               <span className="text-uppercase bg-light text-gold px-2">
                 Choose Us
               </span>
             </h1>
           </div>
-          <div className="row g-5 text-center">
           <div className="row g-5 text-center">
             {[
               {
@@ -129,12 +117,6 @@ export default function HomePage() {
                 ></i>
                 <h4 className="text-gradient">{feature.title}</h4>
                 <p className="mb-0 text-gradient">{feature.description}</p>
-              <div key={i} className="col-md-6 col-lg-4" data-aos="fade-in">
-                <i
-                  className={`fa ${feature.icon} fa-5x text-primary mb-4 text-gradient`}
-                ></i>
-                <h4 className="text-gradient">{feature.title}</h4>
-                <p className="mb-0 text-gradient">{feature.description}</p>
               </div>
             ))}
           </div>
@@ -145,215 +127,8 @@ export default function HomePage() {
       {/* Construction Process Start */}
       <div className="container py-5">
         <h4 className="text-center mb-5 text-gradient" data-aos="fade-up">
-      {/* Feature End */}
-      <hr className="border-info"></hr>
-      {/* Construction Process Start */}
-      <div className="container py-5">
-        <h4 className="text-center mb-5 text-gradient" data-aos="fade-up">
           Our Construction Process
         </h4>
-
-        <div className="timeline position-relative">
-          {/* Vertical Line */}
-          <div
-            className="position-absolute top-0 start-50 translate-middle-x h-100 border-start border-2 border-primary"
-            style={{ zIndex: 0 }}
-          ></div>
-
-          {/* === STEP 1 === */}
-          <div
-            className="timeline-item d-flex justify-content-between align-items-center mb-5"
-            data-aos="fade-right"
-            style={{ position: "relative", zIndex: 1 }}
-          >
-            {/* Left Image */}
-            <div
-              className="timeline-content bg-white-smoke shadow-sm text-center p-3 rounded"
-              style={{ width: "450px" }}
-            >
-              <div className="step-number text-gradient fw-bold display-6">
-                01
-              </div>
-              <h6 className="mt-2 mb-3 text-gradient">Site Visit</h6>
-
-              <div
-                id="carouselVisit"
-                className="carousel slide"
-                data-bs-ride="carousel"
-              >
-                <div className="carousel-inner border-hover">
-                  <div className="carousel-item active">
-                    <Image
-                      src="/img/project-1.jpg"
-                      alt="Site Visit 1"
-                      width={400}
-                      height={400}
-                      className="img-fluid rounded"
-                    />
-                  </div>
-                  <div className="carousel-item">
-                    <Image
-                      src="/img/project-2.jpg"
-                      alt="Site Visit 2"
-                      width={400}
-                      height={400}
-                      className="img-fluid rounded"
-                    />
-                  </div>
-                </div>
-
-                <div className="carousel-indicators custom-indicators">
-                  <button
-                    type="button"
-                    data-bs-target="#carouselVisit"
-                    data-bs-slide-to="0"
-                    className="active"
-                  ></button>
-                  <button
-                    type="button"
-                    data-bs-target="#carouselVisit"
-                    data-bs-slide-to="1"
-                  ></button>
-                </div>
-              </div>
-            </div>
-
-            {/* Middle Dot */}
-            <div
-              className="position-absolute top-50 start-50 translate-middle bg-gold rounded-circle"
-              style={{ width: "20px", height: "20px", zIndex: 2 }}
-            ></div>
-
-            {/* Right Paragraph */}
-            <div
-              className="explanation-card bg-light shadow-sm p-4 rounded border-start border-3 border-primary"
-              style={{ width: "400px" }}
-            >
-              <h6 className="fw-bold text-gold mb-2">Initial Site Visit</h6>
-              <p className="text-gradient mb-0">
-                Our team visits the site to analyze soil, slope, and
-                surroundings to ensure accurate foundation planning.
-              </p>
-            </div>
-          </div>
-
-          {/* === STEP 2 === */}
-          <div
-            className="timeline-item d-flex justify-content-between align-items-center mb-5 flex-row-reverse"
-            data-aos="fade-left"
-            style={{ position: "relative", zIndex: 1 }}
-          >
-            {/* Right Image */}
-            <div
-              className="timeline-content bg-white-smoke shadow-sm text-center p-3 rounded"
-              style={{ width: "450px" }}
-            >
-              <div className="step-number text-gradient fw-bold display-6">
-                02
-              </div>
-              <h6 className="mt-2 mb-3 text-gradient">Site Plan</h6>
-
-              <div
-                id="carouselFloorPlan"
-                className="carousel slide"
-                data-bs-ride="carousel"
-              >
-                <div className="carousel-inner border-hover">
-                  <div className="carousel-item active">
-                    <Image
-                      src="/img/project-2.jpg"
-                      alt="Floor Plan 1"
-                      width={400}
-                      height={400}
-                      className="img-fluid rounded"
-                    />
-                  </div>
-                  <div className="carousel-item">
-                    <Image
-                      src="/img/project-3.jpg"
-                      alt="Floor Plan 2"
-                      width={400}
-                      height={400}
-                      className="img-fluid rounded"
-                    />
-                  </div>
-                </div>
-
-                <div className="carousel-indicators custom-indicators">
-                  <button
-                    type="button"
-                    data-bs-target="#carouselFloorPlan"
-                    data-bs-slide-to="0"
-                    className="active"
-                  ></button>
-                  <button
-                    type="button"
-                    data-bs-target="#carouselFloorPlan"
-                    data-bs-slide-to="1"
-                  ></button>
-                </div>
-              </div>
-            </div>
-
-            {/* Middle Dot */}
-            <div
-              className="position-absolute top-50 start-50 translate-middle bg-gold rounded-circle"
-              style={{ width: "20px", height: "20px", zIndex: 2 }}
-            ></div>
-
-            {/* Left Paragraph */}
-            <div
-             className="explanation-card bg-light shadow-sm p-4 rounded border-start border-3 border-primary"
-              style={{ width: "400px" }}
-            >
-              <h6 className="fw-bold text-gold mb-2">Site Plan Creation</h6>
-              <p className="text-gradient mb-0">
-                Based on the site visit findings, we create a detailed site plan
-                showing plot dimensions, access points, and orientation.
-              </p>
-            </div>
-          </div>
-
-          {/* === STEP 3 === */}
-          <div
-            className="timeline-item d-flex justify-content-between align-items-center mb-5"
-            data-aos="fade-right"
-            style={{ position: "relative", zIndex: 1 }}
-          >
-            {/* Left Image */}
-            <div
-              className="timeline-content bg-white-smoke shadow-sm text-center p-3 rounded"
-              style={{ width: "450px" }}
-            >
-              <div className="step-number text-gradient fw-bold display-6">
-                03
-              </div>
-              <h6 className="mt-2 mb-3 text-gradient">Client Discussion</h6>
-
-              <div
-                id="carouselDiscussion"
-                className="carousel slide"
-                data-bs-ride="carousel"
-              >
-                <div className="carousel-inner border-hover">
-                  <div className="carousel-item active">
-                    <Image
-                      src="/img/project-3.jpg"
-                      alt="Client Discussion 1"
-                      width={400}
-                      height={400}
-                      className="img-fluid rounded"
-                    />
-                  </div>
-                  <div className="carousel-item">
-                    <Image
-                      src="/img/project-4.jpg"
-                      alt="Client Discussion 2"
-                      width={400}
-                      height={400}
-                      className="img-fluid rounded"
-                    />
-                  </div>
 
         <div className="timeline position-relative">
           {/* Vertical Line */}
@@ -557,30 +332,6 @@ export default function HomePage() {
                     />
                   </div>
                 </div>
-                <h6 className="mt-2 mb-3 text-gradient">{item.title}</h6>
-
-                <div
-                  id={`carousel${i}`}
-                  className="carousel slide"
-                  data-bs-ride="carousel"
-                >
-                  <div className="carousel-inner border-hover rounded-3">
-                    {item.images.map((img, j) => (
-                      <div
-                        key={j}
-                        className={`carousel-item ${j === 0 ? "active" : ""}`}
-                      >
-                        <Image
-                          src={img}
-                          alt={item.title}
-                          width={400}
-                          height={300}
-                          className="img-fluid rounded-3"
-                        />
-                      </div>
-                    ))}
-                  </div>
-                </div>
               </div>
             </div>
 
@@ -592,20 +343,18 @@ export default function HomePage() {
 
             {/* Right Paragraph */}
             <div
-             className="explanation-card bg-light shadow-sm p-4 rounded border-start border-3 border-primary"
+              className="explanation-card bg-light shadow-sm p-4 rounded border-start border-3 border-primary"
               style={{ width: "400px" }}
             >
-              <h6 className="fw-bold text-gold mb-2">
-                Structural Drawings
-              </h6>
+              <h6 className="fw-bold text-gold mb-2">Design Discussion</h6>
               <p className="text-gradient mb-0">
-                Our engineers prepare detailed structural layouts ensuring
-                safety, strength, and adherence to standards.
+                We collaborate with clients to refine their preferences, budget,
+                and expectations before proceeding to 3D design.
               </p>
             </div>
           </div>
 
-          {/* === STEP 6 === */}
+          {/*  STEP 4  */}
           <div
             className="timeline-item d-flex justify-content-between align-items-center mb-5 flex-row-reverse"
             data-aos="fade-left"
@@ -617,20 +366,20 @@ export default function HomePage() {
               style={{ width: "450px" }}
             >
               <div className="step-number text-gradient fw-bold display-6">
-                06
+                04
               </div>
-              <h6 className="mt-2 mb-3 text-gradient">3D Interior Design</h6>
+              <h6 className="mt-2 mb-3 text-gradient">Elevation 3D Design</h6>
 
               <div
-                id="carouselInterior"
+                id="carouselElevation"
                 className="carousel slide"
                 data-bs-ride="carousel"
               >
                 <div className="carousel-inner border-hover">
                   <div className="carousel-item active">
                     <Image
-                      src="/img/project-6.jpg"
-                      alt="Interior 1"
+                      src="/img/project-4.jpg"
+                      alt="Elevation 1"
                       width={400}
                       height={400}
                       className="img-fluid rounded"
@@ -638,8 +387,8 @@ export default function HomePage() {
                   </div>
                   <div className="carousel-item">
                     <Image
-                      src="/img/project-1.jpg"
-                      alt="Interior 2"
+                      src="/img/project-5.jpg"
+                      alt="Elevation 2"
                       width={400}
                       height={400}
                       className="img-fluid rounded"
@@ -660,17 +409,15 @@ export default function HomePage() {
               className="explanation-card bg-light shadow-sm p-4 rounded border-start border-3 border-primary"
               style={{ width: "400px" }}
             >
-              <h6 className="fw-bold text-gold mb-2">
-                3D Interior Visualization
-              </h6>
+              <h6 className="fw-bold text-gold mb-2">3D Elevation Design</h6>
               <p className="text-gradient mb-0">
-                We bring your interiors to life with 3D renders, showing
-                furniture, lighting, and color schemes before execution.
+                We visualize your project through realistic 3D elevation models
+                showing materials, lighting, and exterior concepts.
               </p>
             </div>
           </div>
 
-          {/* === STEP 7 === */}
+          {/*  STEP 5  */}
           <div
             className="timeline-item d-flex justify-content-between align-items-center mb-5"
             data-aos="fade-right"
@@ -682,20 +429,20 @@ export default function HomePage() {
               style={{ width: "450px" }}
             >
               <div className="step-number text-gradient fw-bold display-6">
-                07
+                05
               </div>
-              <h6 className="mt-2 mb-3 text-gradient">Execution</h6>
+              <h6 className="mt-2 mb-3 text-gradient">Structural Drawing</h6>
 
               <div
-                id="carouselExecution"
+                id="carouselStructure"
                 className="carousel slide"
                 data-bs-ride="carousel"
               >
                 <div className="carousel-inner border-hover">
                   <div className="carousel-item active">
                     <Image
-                      src="/img/project-1.jpg"
-                      alt="Execution 1"
+                      src="/img/project-5.jpg"
+                      alt="Structure 1"
                       width={400}
                       height={400}
                       className="img-fluid rounded"
@@ -704,13 +451,14 @@ export default function HomePage() {
                   <div className="carousel-item">
                     <Image
                       src="/img/project-6.jpg"
-                      alt="Execution 2"
+                      alt="Structure 2"
                       width={400}
                       height={400}
                       className="img-fluid rounded"
                     />
                   </div>
                 </div>
+              </div>
             </div>
 
             {/* Middle Dot */}
@@ -863,37 +611,8 @@ export default function HomePage() {
 
         <div className="text-center mt-4">
           <i className="fa-solid fa-chevron-down fs-3 text-gold"></i>
-
-            {/* Middle Dot */}
-            <div
-              className="position-absolute top-50 start-50 translate-middle bg-gold rounded-circle"
-              style={{ width: "20px", height: "20px", zIndex: 2 }}
-            ></div>
-
-            {/* Right Paragraph */}
-            <div
-              className="explanation-card bg-light shadow-sm p-4 rounded border-start border-3 border-primary"
-              style={{ width: "400px" }}
-            >
-              <h6 className="fw-bold text-gold mb-2">Project Execution</h6>
-              <p className="text-gradient mb-0">
-                The construction begins following approved drawings, supervised
-                closely to ensure precision and quality.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div className="text-center mt-4">
-          <i className="fa-solid fa-chevron-down fs-3 text-gold"></i>
         </div>
       </div>
-      {/* Construction Process End */}
-      <hr className="border-info"></hr>
-      {/* FAQ Start */}
-      <section className="py-5">
-      </div>
-
       {/* Construction Process End */}
       <hr className="border-info"></hr>
       {/* FAQ Start */}
@@ -1046,7 +765,6 @@ export default function HomePage() {
                   personality and space requirements perfectly.
                 </div>
               </div>
-            </div>
             </div>
           </div>
         </div>
