@@ -592,3 +592,10 @@ color:#2F5966 !important;
     background-color:#2F5966 !important;
     border-color:#2F5966 !important;
 }
+.explanation-card {
+  transition: all 0.3s ease;
+}
+.explanation-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 14px rgba(0, 0, 0, 0.1);
+}
