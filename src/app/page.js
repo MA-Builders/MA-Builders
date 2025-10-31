@@ -139,7 +139,7 @@ export default function HomePage() {
 
           {/* Step 1 */}
           <div
-            className="timeline-item d-flex mb-5 justify-content-start"
+            className="timeline-item d-flex mb-2 justify-content-start"
             data-aos="fade-right"
             style={{ position: "relative", zIndex: 1 }}
           >
@@ -148,7 +148,7 @@ export default function HomePage() {
               style={{ width: "20px", height: "20px", zIndex: 2 }}
             ></div>
             <div
-              className="timeline-content bg-white shadow-sm text-center p-3 rounded"
+              className="timeline-content bg-white-smoke shadow-sm text-center p-3 rounded"
               style={{ width: "450px" }}
             >
               <div className="step-number text-gradient fw-bold display-6">
@@ -202,7 +202,7 @@ export default function HomePage() {
 
           {/* Step 2 */}
           <div
-            className="timeline-item d-flex mb-5 justify-content-end"
+            className="timeline-item d-flex mb-2 justify-content-end"
             data-aos="fade-left"
             style={{ position: "relative", zIndex: 1 }}
           >
@@ -211,7 +211,7 @@ export default function HomePage() {
               style={{ width: "20px", height: "20px", zIndex: 2 }}
             ></div>
             <div
-              className="timeline-content bg-white shadow-sm text-center p-3 rounded"
+              className="timeline-content bg-white-smoke shadow-sm text-center p-3 rounded"
               style={{ width: "450px" }}
             >
               <div className="step-number text-gradient fw-bold display-6">
@@ -264,7 +264,7 @@ export default function HomePage() {
 
           {/* Step 3 */}
           <div
-            className="timeline-item d-flex mb-5 justify-content-start"
+            className="timeline-item d-flex mb-2 justify-content-start"
             data-aos="fade-right"
             style={{ position: "relative", zIndex: 1 }}
           >
@@ -273,7 +273,7 @@ export default function HomePage() {
               style={{ width: "20px", height: "20px", zIndex: 2 }}
             ></div>
             <div
-              className="timeline-content bg-white shadow-sm text-center p-3 rounded"
+              className="timeline-content bg-white-smoke shadow-sm text-center p-3 rounded"
               style={{ width: "450px" }}
             >
               <div className="step-number text-gradient fw-bold display-6">
@@ -326,7 +326,7 @@ export default function HomePage() {
 
           {/* Step 4 */}
           <div
-            className="timeline-item d-flex mb-5 justify-content-end"
+            className="timeline-item d-flex mb-2 justify-content-end"
             data-aos="fade-left"
             style={{ position: "relative", zIndex: 1 }}
           >
@@ -335,7 +335,7 @@ export default function HomePage() {
               style={{ width: "20px", height: "20px", zIndex: 2 }}
             ></div>
             <div
-              className="timeline-content bg-white shadow-sm text-center p-3 rounded"
+              className="timeline-content bg-white-smoke shadow-sm text-center p-3 rounded"
               style={{ width: "450px" }}
             >
               <div className="step-number text-gradient fw-bold display-6">
@@ -388,7 +388,7 @@ export default function HomePage() {
 
           {/* Step 5 */}
           <div
-            className="timeline-item d-flex mb-5 justify-content-start"
+            className="timeline-item d-flex mb-2 justify-content-start"
             data-aos="fade-right"
             style={{ position: "relative", zIndex: 1 }}
           >
@@ -397,7 +397,7 @@ export default function HomePage() {
               style={{ width: "20px", height: "20px", zIndex: 2 }}
             ></div>
             <div
-              className="timeline-content bg-white shadow-sm text-center p-3 rounded"
+              className="timeline-content bg-white-smoke shadow-sm text-center p-3 rounded"
               style={{ width: "450px" }}
             >
               <div className="step-number text-gradient fw-bold display-6">
@@ -450,7 +450,7 @@ export default function HomePage() {
 
           {/* Step 6 */}
           <div
-            className="timeline-item d-flex mb-5 justify-content-end"
+            className="timeline-item d-flex mb-2 justify-content-end"
             data-aos="fade-left"
             style={{ position: "relative", zIndex: 1 }}
           >
@@ -459,7 +459,7 @@ export default function HomePage() {
               style={{ width: "20px", height: "20px", zIndex: 2 }}
             ></div>
             <div
-              className="timeline-content bg-white shadow-sm text-center p-3 rounded"
+              className="timeline-content bg-white-smoke shadow-sm text-center p-3 rounded"
               style={{ width: "450px" }}
             >
               <div className="step-number text-gradient fw-bold display-6">
@@ -512,7 +512,7 @@ export default function HomePage() {
 
           {/* Step 7 */}
           <div
-            className="timeline-item d-flex mb-5 justify-content-start"
+            className="timeline-item d-flex mb-2 justify-content-start"
             data-aos="fade-right"
             style={{ position: "relative", zIndex: 1 }}
           >
@@ -521,7 +521,7 @@ export default function HomePage() {
               style={{ width: "20px", height: "20px", zIndex: 2 }}
             ></div>
             <div
-              className="timeline-content bg-white shadow-sm text-center p-3 rounded"
+              className="timeline-content bg-white-smoke shadow-sm text-center p-3 rounded"
               style={{ width: "450px" }}
             >
               <div className="step-number text-gradient fw-bold display-6">

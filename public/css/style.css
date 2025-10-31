@@ -514,7 +514,7 @@
  transform: translateX(-50%);
  width: 4px;
  height: 100%;
- background-color: #20c997;
+ background-color: #2F5966;
 }
 .timeline-content { width: 48%; }
 .timeline-content:hover { transform: translateY(-5px); }
@@ -527,9 +527,7 @@
  border: 3px solid transparent;
  transition: all 0.3s ease;
 }
-.border-hover img:hover {
-border-color: #20c997; /* Teal hover border */
-box-shadow: 0 0 15px rgba(32, 201, 151, 0.6);
+.border-hover img:hover { 
 transform: scale(1.02);
 }
 .accordion-button:not(.collapsed) {
