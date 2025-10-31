@@ -182,7 +182,13 @@ export default function Header() {
                   Contact Us
                 </Link>
               </div>
-              <span className="btn btn-outline-login m-2">Login</span>
+              <span
+                className="btn btn-outline-login ms-lg-3 mt-2 mt-lg-0"
+                data-bs-toggle="modal"
+                data-bs-target="#loginModal"
+              >
+                Login
+              </span>
             </div>
           </nav>
         </div>
@@ -197,7 +203,10 @@ export default function Header() {
         <div className="modal-dialog modal-dialog-centered">
           <div className="modal-content rounded-4 shadow">
             <div className="modal-header border-0">
-              <h5 className="modal-title fw-bold text-gradient text-center" id="loginModalLabel">
+              <h5
+                className="modal-title fw-bold text-gradient"
+                id="loginModalLabel"
+              >
                 Admin Login
               </h5>
               <button
@@ -235,7 +244,10 @@ export default function Header() {
                     required
                   />
                 </div>
-                <button type="submit" className="btn btn-primary text-gold w-100 mt-3">
+                <button
+                  type="submit"
+                  className="btn btn-primary text-gold w-100 mt-3"
+                >
                   Login
                 </button>
               </form>

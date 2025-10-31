@@ -656,3 +656,15 @@ color:#2F5966 !important;
   transform: translateY(-5px);
   box-shadow: 0 8px 14px rgba(0, 0, 0, 0.1);
 }
+.btn-outline-login{
+    border-radius:10px !important;
+    background-color: #2F5966 !important;
+    color:#E1A73B !important;
+}
+.btn-outline-login:hover{
+    background-color: #E1A73B !important;
+    color:#2F5966 !important;
+}
+.modal-title{
+    padding-left:175px !important;
+}
