@@ -125,275 +125,494 @@ export default function HomePage() {
       {/* Feature End */}
       <hr className="border-info"></hr>
       {/* Construction Process Start */}
-     <div className="container py-5">
-      <h4 className="text-center mb-5 text-gradient" data-aos="fade-up">
-        Our Construction Process
-      </h4>
+      <div className="container py-5">
+        <h4 className="text-center mb-5 text-gradient" data-aos="fade-up">
+          Our Construction Process
+        </h4>
 
-      <div className="timeline position-relative">
-        {/* Vertical Line - Hidden on mobile */}
-        <div
-          className="position-absolute top-0 start-50 translate-middle-x h-100 border-start border-2 border-primary d-none d-lg-block"
-          style={{ zIndex: 0 }}
-        ></div>
+        <div className="timeline position-relative">
+          {/* Vertical Line */}
+          <div
+            className="position-absolute top-0 start-50 translate-middle-x h-100 border-start border-2 border-primary"
+            style={{ zIndex: 0 }}
+          ></div>
 
-        {/* STEP 1 */}
-        <div
-          className="timeline-item row g-3 mb-5"
-          style={{ position: 'relative', zIndex: 1 }}
-        >
-          <div className="col-12 col-lg-5">
-            <div className="timeline-content bg-white shadow-sm text-center p-3 rounded me-lg-auto" style={{ maxWidth: '450px' }}>
-              <div className="step-number text-gradient fw-bold display-6">01</div>
+          {/* STEP 1 */}
+          <div
+            className="timeline-item d-flex justify-content-between align-items-center mb-5"
+            data-aos="fade-right"
+            style={{ position: "relative", zIndex: 1 }}
+          >
+            {/* Left Image */}
+            <div
+              className="timeline-content bg-white-smoke shadow-sm text-center p-3 rounded"
+              style={{ width: "450px" }}
+            >
+              <div className="step-number text-gradient fw-bold display-6">
+                01
+              </div>
               <h6 className="mt-2 mb-3 text-gradient">Site Visit</h6>
-              <div id="carouselVisit" className="carousel slide" data-bs-ride="carousel">
+
+              <div
+                id="carouselVisit"
+                className="carousel slide"
+                data-bs-ride="carousel"
+              >
                 <div className="carousel-inner border-hover">
                   <div className="carousel-item active">
-                    <Image src="/img/project-1.jpg" alt="Site Visit 1" width={400} height={400} className="img-fluid rounded" />
+                    <Image
+                      src="/img/project-1.jpg"
+                      alt="Site Visit 1"
+                      width={400}
+                      height={400}
+                      className="img-fluid rounded"
+                    />
                   </div>
                   <div className="carousel-item">
-                    <Image src="/img/project-2.jpg" alt="Site Visit 2" width={400} height={400} className="img-fluid rounded" />
+                    <Image
+                      src="/img/project-2.jpg"
+                      alt="Site Visit 2"
+                      width={400}
+                      height={400}
+                      className="img-fluid rounded"
+                    />
                   </div>
                 </div>
+
                 <div className="carousel-indicators custom-indicators">
-                  <button type="button" data-bs-target="#carouselVisit" data-bs-slide-to="0" className="active"></button>
-                  <button type="button" data-bs-target="#carouselVisit" data-bs-slide-to="1"></button>
+                  <button
+                    type="button"
+                    data-bs-target="#carouselVisit"
+                    data-bs-slide-to="0"
+                    className="active"
+                  ></button>
+                  <button
+                    type="button"
+                    data-bs-target="#carouselVisit"
+                    data-bs-slide-to="1"
+                  ></button>
                 </div>
               </div>
             </div>
-          </div>
-          <div className="col-lg-2 d-none d-lg-flex align-items-center justify-content-center">
-            <div className="bg-gold rounded-circle" style={{ width: '20px', height: '20px', zIndex: 2 }}></div>
-          </div>
-          <div className="col-12 col-lg-5">
-            <div className="explanation-card bg-light shadow-sm p-4 rounded border-start border-3 border-primary ms-lg-auto" style={{ maxWidth: '400px' }}>
+
+            {/* Middle Dot */}
+            <div
+              className="position-absolute top-50 start-50 translate-middle bg-gold rounded-circle"
+              style={{ width: "20px", height: "20px", zIndex: 2 }}
+            ></div>
+
+            {/* Right Paragraph */}
+            <div
+              className="explanation-card bg-light shadow-sm p-4 rounded border-start border-3 border-primary"
+              style={{ width: "400px" }}
+            >
               <h6 className="fw-bold text-gold mb-2">Initial Site Visit</h6>
-              <p className="text-gradient mb-0">Our team visits the site to analyze soil, slope, and surroundings to ensure accurate foundation planning.</p>
+              <p className="text-gradient mb-0">
+                Our team visits the site to analyze soil, slope, and
+                surroundings to ensure accurate foundation planning.
+              </p>
             </div>
           </div>
-        </div>
 
-        {/* STEP 2 */}
-        <div
-          className="timeline-item row g-3 mb-5 flex-lg-row-reverse"
-          style={{ position: 'relative', zIndex: 1 }}
-        >
-          <div className="col-12 col-lg-5">
-            <div className="timeline-content bg-white shadow-sm text-center p-3 rounded ms-lg-auto" style={{ maxWidth: '450px' }}>
-              <div className="step-number text-gradient fw-bold display-6">02</div>
+          {/* STEP 2  */}
+          <div
+            className="timeline-item d-flex justify-content-between align-items-center mb-5 flex-row-reverse"
+            data-aos="fade-left"
+            style={{ position: "relative", zIndex: 1 }}
+          >
+            {/* Right Image */}
+            <div
+              className="timeline-content bg-white-smoke shadow-sm text-center p-3 rounded"
+              style={{ width: "450px" }}
+            >
+              <div className="step-number text-gradient fw-bold display-6">
+                02
+              </div>
               <h6 className="mt-2 mb-3 text-gradient">Site Plan</h6>
-              <div id="carouselFloorPlan" className="carousel slide" data-bs-ride="carousel">
+
+              <div
+                id="carouselFloorPlan"
+                className="carousel slide"
+                data-bs-ride="carousel"
+              >
                 <div className="carousel-inner border-hover">
                   <div className="carousel-item active">
-                    <Image src="/img/project-2.jpg" alt="Floor Plan 1" width={400} height={400} className="img-fluid rounded" />
+                    <Image
+                      src="/img/project-2.jpg"
+                      alt="Floor Plan 1"
+                      width={400}
+                      height={400}
+                      className="img-fluid rounded"
+                    />
                   </div>
                   <div className="carousel-item">
-                    <Image src="/img/project-3.jpg" alt="Floor Plan 2" width={400} height={400} className="img-fluid rounded" />
+                    <Image
+                      src="/img/project-3.jpg"
+                      alt="Floor Plan 2"
+                      width={400}
+                      height={400}
+                      className="img-fluid rounded"
+                    />
                   </div>
                 </div>
+
                 <div className="carousel-indicators custom-indicators">
-                  <button type="button" data-bs-target="#carouselFloorPlan" data-bs-slide-to="0" className="active"></button>
-                  <button type="button" data-bs-target="#carouselFloorPlan" data-bs-slide-to="1"></button>
+                  <button
+                    type="button"
+                    data-bs-target="#carouselFloorPlan"
+                    data-bs-slide-to="0"
+                    className="active"
+                  ></button>
+                  <button
+                    type="button"
+                    data-bs-target="#carouselFloorPlan"
+                    data-bs-slide-to="1"
+                  ></button>
                 </div>
               </div>
             </div>
-          </div>
-          <div className="col-lg-2 d-none d-lg-flex align-items-center justify-content-center">
-            <div className="bg-gold rounded-circle" style={{ width: '20px', height: '20px', zIndex: 2 }}></div>
-          </div>
-          <div className="col-12 col-lg-5">
-            <div className="explanation-card bg-light shadow-sm p-4 rounded border-start border-3 border-primary me-lg-auto" style={{ maxWidth: '400px' }}>
+
+            {/* Middle Dot */}
+            <div
+              className="position-absolute top-50 start-50 translate-middle bg-gold rounded-circle"
+              style={{ width: "20px", height: "20px", zIndex: 2 }}
+            ></div>
+
+            {/* Left Paragraph */}
+            <div
+              className="explanation-card bg-light shadow-sm p-4 rounded border-start border-3 border-primary"
+              style={{ width: "400px" }}
+            >
               <h6 className="fw-bold text-gold mb-2">Site Plan Creation</h6>
-              <p className="text-gradient mb-0">Based on the site visit findings, we create a detailed site plan showing plot dimensions, access points, and orientation.</p>
+              <p className="text-gradient mb-0">
+                Based on the site visit findings, we create a detailed site plan
+                showing plot dimensions, access points, and orientation.
+              </p>
             </div>
           </div>
-        </div>
 
-        {/* STEP 3 */}
-        <div
-          className="timeline-item row g-3 mb-5"
-          style={{ position: 'relative', zIndex: 1 }}
-        >
-          <div className="col-12 col-lg-5">
-            <div className="timeline-content bg-white shadow-sm text-center p-3 rounded me-lg-auto" style={{ maxWidth: '450px' }}>
-              <div className="step-number text-gradient fw-bold display-6">03</div>
+          {/*  STEP 3  */}
+          <div
+            className="timeline-item d-flex justify-content-between align-items-center mb-5"
+            data-aos="fade-right"
+            style={{ position: "relative", zIndex: 1 }}
+          >
+            {/* Left Image */}
+            <div
+              className="timeline-content bg-white-smoke shadow-sm text-center p-3 rounded"
+              style={{ width: "450px" }}
+            >
+              <div className="step-number text-gradient fw-bold display-6">
+                03
+              </div>
               <h6 className="mt-2 mb-3 text-gradient">Client Discussion</h6>
-              <div id="carouselDiscussion" className="carousel slide" data-bs-ride="carousel">
+
+              <div
+                id="carouselDiscussion"
+                className="carousel slide"
+                data-bs-ride="carousel"
+              >
                 <div className="carousel-inner border-hover">
                   <div className="carousel-item active">
-                    <Image src="/img/project-3.jpg" alt="Client Discussion 1" width={400} height={400} className="img-fluid rounded" />
+                    <Image
+                      src="/img/project-3.jpg"
+                      alt="Client Discussion 1"
+                      width={400}
+                      height={400}
+                      className="img-fluid rounded"
+                    />
                   </div>
                   <div className="carousel-item">
-                    <Image src="/img/project-4.jpg" alt="Client Discussion 2" width={400} height={400} className="img-fluid rounded" />
+                    <Image
+                      src="/img/project-4.jpg"
+                      alt="Client Discussion 2"
+                      width={400}
+                      height={400}
+                      className="img-fluid rounded"
+                    />
                   </div>
-                </div>
-                <div className="carousel-indicators custom-indicators">
-                  <button type="button" data-bs-target="#carouselDiscussion" data-bs-slide-to="0" className="active"></button>
-                  <button type="button" data-bs-target="#carouselDiscussion" data-bs-slide-to="1"></button>
                 </div>
               </div>
             </div>
-          </div>
-          <div className="col-lg-2 d-none d-lg-flex align-items-center justify-content-center">
-            <div className="bg-gold rounded-circle" style={{ width: '20px', height: '20px', zIndex: 2 }}></div>
-          </div>
-          <div className="col-12 col-lg-5">
-            <div className="explanation-card bg-light shadow-sm p-4 rounded border-start border-3 border-primary ms-lg-auto" style={{ maxWidth: '400px' }}>
+
+            {/* Middle Dot */}
+            <div
+              className="position-absolute top-50 start-50 translate-middle bg-gold rounded-circle"
+              style={{ width: "20px", height: "20px", zIndex: 2 }}
+            ></div>
+
+            {/* Right Paragraph */}
+            <div
+              className="explanation-card bg-light shadow-sm p-4 rounded border-start border-3 border-primary"
+              style={{ width: "400px" }}
+            >
               <h6 className="fw-bold text-gold mb-2">Design Discussion</h6>
-              <p className="text-gradient mb-0">We collaborate with clients to refine their preferences, budget, and expectations before proceeding to 3D design.</p>
+              <p className="text-gradient mb-0">
+                We collaborate with clients to refine their preferences, budget,
+                and expectations before proceeding to 3D design.
+              </p>
             </div>
           </div>
-        </div>
 
-        {/* STEP 4 */}
-        <div
-          className="timeline-item row g-3 mb-5 flex-lg-row-reverse"
-          style={{ position: 'relative', zIndex: 1 }}
-        >
-          <div className="col-12 col-lg-5">
-            <div className="timeline-content bg-white shadow-sm text-center p-3 rounded ms-lg-auto" style={{ maxWidth: '450px' }}>
-              <div className="step-number text-gradient fw-bold display-6">04</div>
+          {/*  STEP 4  */}
+          <div
+            className="timeline-item d-flex justify-content-between align-items-center mb-5 flex-row-reverse"
+            data-aos="fade-left"
+            style={{ position: "relative", zIndex: 1 }}
+          >
+            {/* Right Image */}
+            <div
+              className="timeline-content bg-white-smoke shadow-sm text-center p-3 rounded"
+              style={{ width: "450px" }}
+            >
+              <div className="step-number text-gradient fw-bold display-6">
+                04
+              </div>
               <h6 className="mt-2 mb-3 text-gradient">Elevation 3D Design</h6>
-              <div id="carouselElevation" className="carousel slide" data-bs-ride="carousel">
+
+              <div
+                id="carouselElevation"
+                className="carousel slide"
+                data-bs-ride="carousel"
+              >
                 <div className="carousel-inner border-hover">
                   <div className="carousel-item active">
-                    <Image src="/img/project-4.jpg" alt="Elevation 1" width={400} height={400} className="img-fluid rounded" />
+                    <Image
+                      src="/img/project-4.jpg"
+                      alt="Elevation 1"
+                      width={400}
+                      height={400}
+                      className="img-fluid rounded"
+                    />
                   </div>
                   <div className="carousel-item">
-                    <Image src="/img/project-5.jpg" alt="Elevation 2" width={400} height={400} className="img-fluid rounded" />
+                    <Image
+                      src="/img/project-5.jpg"
+                      alt="Elevation 2"
+                      width={400}
+                      height={400}
+                      className="img-fluid rounded"
+                    />
                   </div>
-                </div>
-                <div className="carousel-indicators custom-indicators">
-                  <button type="button" data-bs-target="#carouselElevation" data-bs-slide-to="0" className="active"></button>
-                  <button type="button" data-bs-target="#carouselElevation" data-bs-slide-to="1"></button>
                 </div>
               </div>
             </div>
-          </div>
-          <div className="col-lg-2 d-none d-lg-flex align-items-center justify-content-center">
-            <div className="bg-gold rounded-circle" style={{ width: '20px', height: '20px', zIndex: 2 }}></div>
-          </div>
-          <div className="col-12 col-lg-5">
-            <div className="explanation-card bg-light shadow-sm p-4 rounded border-start border-3 border-primary me-lg-auto" style={{ maxWidth: '400px' }}>
+
+            {/* Middle Dot */}
+            <div
+              className="position-absolute top-50 start-50 translate-middle bg-gold rounded-circle"
+              style={{ width: "20px", height: "20px", zIndex: 2 }}
+            ></div>
+
+            {/* Left Paragraph */}
+            <div
+              className="explanation-card bg-light shadow-sm p-4 rounded border-start border-3 border-primary"
+              style={{ width: "400px" }}
+            >
               <h6 className="fw-bold text-gold mb-2">3D Elevation Design</h6>
-              <p className="text-gradient mb-0">We visualize your project through realistic 3D elevation models showing materials, lighting, and exterior concepts.</p>
+              <p className="text-gradient mb-0">
+                We visualize your project through realistic 3D elevation models
+                showing materials, lighting, and exterior concepts.
+              </p>
             </div>
           </div>
-        </div>
 
-        {/* STEP 5 */}
-        <div
-          className="timeline-item row g-3 mb-5"
-          style={{ position: 'relative', zIndex: 1 }}
-        >
-          <div className="col-12 col-lg-5">
-            <div className="timeline-content bg-white shadow-sm text-center p-3 rounded me-lg-auto" style={{ maxWidth: '450px' }}>
-              <div className="step-number text-gradient fw-bold display-6">05</div>
+          {/*  STEP 5  */}
+          <div
+            className="timeline-item d-flex justify-content-between align-items-center mb-5"
+            data-aos="fade-right"
+            style={{ position: "relative", zIndex: 1 }}
+          >
+            {/* Left Image */}
+            <div
+              className="timeline-content bg-white-smoke shadow-sm text-center p-3 rounded"
+              style={{ width: "450px" }}
+            >
+              <div className="step-number text-gradient fw-bold display-6">
+                05
+              </div>
               <h6 className="mt-2 mb-3 text-gradient">Structural Drawing</h6>
-              <div id="carouselStructure" className="carousel slide" data-bs-ride="carousel">
+
+              <div
+                id="carouselStructure"
+                className="carousel slide"
+                data-bs-ride="carousel"
+              >
                 <div className="carousel-inner border-hover">
                   <div className="carousel-item active">
-                    <Image src="/img/project-5.jpg" alt="Structure 1" width={400} height={400} className="img-fluid rounded" />
+                    <Image
+                      src="/img/project-5.jpg"
+                      alt="Structure 1"
+                      width={400}
+                      height={400}
+                      className="img-fluid rounded"
+                    />
                   </div>
                   <div className="carousel-item">
-                    <Image src="/img/project-6.jpg" alt="Structure 2" width={400} height={400} className="img-fluid rounded" />
+                    <Image
+                      src="/img/project-6.jpg"
+                      alt="Structure 2"
+                      width={400}
+                      height={400}
+                      className="img-fluid rounded"
+                    />
                   </div>
-                </div>
-                <div className="carousel-indicators custom-indicators">
-                  <button type="button" data-bs-target="#carouselStructure" data-bs-slide-to="0" className="active"></button>
-                  <button type="button" data-bs-target="#carouselStructure" data-bs-slide-to="1"></button>
                 </div>
               </div>
             </div>
-          </div>
-          <div className="col-lg-2 d-none d-lg-flex align-items-center justify-content-center">
-            <div className="bg-gold rounded-circle" style={{ width: '20px', height: '20px', zIndex: 2 }}></div>
-          </div>
-          <div className="col-12 col-lg-5">
-            <div className="explanation-card bg-light shadow-sm p-4 rounded border-start border-3 border-primary ms-lg-auto" style={{ maxWidth: '400px' }}>
+
+            {/* Middle Dot */}
+            <div
+              className="position-absolute top-50 start-50 translate-middle bg-gold rounded-circle"
+              style={{ width: "20px", height: "20px", zIndex: 2 }}
+            ></div>
+
+            {/* Right Paragraph */}
+            <div
+              className="explanation-card bg-light shadow-sm p-4 rounded border-start border-3 border-primary"
+              style={{ width: "400px" }}
+            >
               <h6 className="fw-bold text-gold mb-2">Structural Drawings</h6>
-              <p className="text-gradient mb-0">Our engineers prepare detailed structural layouts ensuring safety, strength, and adherence to standards.</p>
+              <p className="text-gradient mb-0">
+                Our engineers prepare detailed structural layouts ensuring
+                safety, strength, and adherence to standards.
+              </p>
             </div>
           </div>
-        </div>
 
-        {/* STEP 6 */}
-        <div
-          className="timeline-item row g-3 mb-5 flex-lg-row-reverse"
-          style={{ position: 'relative', zIndex: 1 }}
-        >
-          <div className="col-12 col-lg-5">
-            <div className="timeline-content bg-white shadow-sm text-center p-3 rounded ms-lg-auto" style={{ maxWidth: '450px' }}>
-              <div className="step-number text-gradient fw-bold display-6">06</div>
+          {/*  STEP 6  */}
+          <div
+            className="timeline-item d-flex justify-content-between align-items-center mb-5 flex-row-reverse"
+            data-aos="fade-left"
+            style={{ position: "relative", zIndex: 1 }}
+          >
+            {/* Right Image */}
+            <div
+              className="timeline-content bg-white-smoke shadow-sm text-center p-3 rounded"
+              style={{ width: "450px" }}
+            >
+              <div className="step-number text-gradient fw-bold display-6">
+                06
+              </div>
               <h6 className="mt-2 mb-3 text-gradient">3D Interior Design</h6>
-              <div id="carouselInterior" className="carousel slide" data-bs-ride="carousel">
+
+              <div
+                id="carouselInterior"
+                className="carousel slide"
+                data-bs-ride="carousel"
+              >
                 <div className="carousel-inner border-hover">
                   <div className="carousel-item active">
-                    <Image src="/img/project-6.jpg" alt="Interior 1" width={400} height={400} className="img-fluid rounded" />
+                    <Image
+                      src="/img/project-6.jpg"
+                      alt="Interior 1"
+                      width={400}
+                      height={400}
+                      className="img-fluid rounded"
+                    />
                   </div>
                   <div className="carousel-item">
-                    <Image src="/img/project-1.jpg" alt="Interior 2" width={400} height={400} className="img-fluid rounded" />
+                    <Image
+                      src="/img/project-1.jpg"
+                      alt="Interior 2"
+                      width={400}
+                      height={400}
+                      className="img-fluid rounded"
+                    />
                   </div>
-                </div>
-                <div className="carousel-indicators custom-indicators">
-                  <button type="button" data-bs-target="#carouselInterior" data-bs-slide-to="0" className="active"></button>
-                  <button type="button" data-bs-target="#carouselInterior" data-bs-slide-to="1"></button>
                 </div>
               </div>
             </div>
-          </div>
-          <div className="col-lg-2 d-none d-lg-flex align-items-center justify-content-center">
-            <div className="bg-gold rounded-circle" style={{ width: '20px', height: '20px', zIndex: 2 }}></div>
-          </div>
-          <div className="col-12 col-lg-5">
-            <div className="explanation-card bg-light shadow-sm p-4 rounded border-start border-3 border-primary me-lg-auto" style={{ maxWidth: '400px' }}>
-              <h6 className="fw-bold text-gold mb-2">3D Interior Visualization</h6>
-              <p className="text-gradient mb-0">We bring your interiors to life with 3D renders, showing furniture, lighting, and color schemes before execution.</p>
+
+            {/* Middle Dot */}
+            <div
+              className="position-absolute top-50 start-50 translate-middle bg-gold rounded-circle"
+              style={{ width: "20px", height: "20px", zIndex: 2 }}
+            ></div>
+
+            {/* Left Paragraph */}
+            <div
+              className="explanation-card bg-light shadow-sm p-4 rounded border-start border-3 border-primary"
+              style={{ width: "400px" }}
+            >
+              <h6 className="fw-bold text-gold mb-2">
+                3D Interior Visualization
+              </h6>
+              <p className="text-gradient mb-0">
+                We bring your interiors to life with 3D renders, showing
+                furniture, lighting, and color schemes before execution.
+              </p>
             </div>
           </div>
-        </div>
 
-        {/* STEP 7 */}
-        <div
-          className="timeline-item row g-3 mb-5"
-          style={{ position: 'relative', zIndex: 1 }}
-        >
-          <div className="col-12 col-lg-5">
-            <div className="timeline-content bg-white shadow-sm text-center p-3 rounded me-lg-auto" style={{ maxWidth: '450px' }}>
-              <div className="step-number text-gradient fw-bold display-6">07</div>
+          {/*  STEP 7  */}
+          <div
+            className="timeline-item d-flex justify-content-between align-items-center mb-5"
+            data-aos="fade-right"
+            style={{ position: "relative", zIndex: 1 }}
+          >
+            {/* Left Image */}
+            <div
+              className="timeline-content bg-white-smoke shadow-sm text-center p-3 rounded"
+              style={{ width: "450px" }}
+            >
+              <div className="step-number text-gradient fw-bold display-6">
+                07
+              </div>
               <h6 className="mt-2 mb-3 text-gradient">Execution</h6>
-              <div id="carouselExecution" className="carousel slide" data-bs-ride="carousel">
+
+              <div
+                id="carouselExecution"
+                className="carousel slide"
+                data-bs-ride="carousel"
+              >
                 <div className="carousel-inner border-hover">
                   <div className="carousel-item active">
-                    <Image src="/img/project-1.jpg" alt="Execution 1" width={400} height={400} className="img-fluid rounded" />
+                    <Image
+                      src="/img/project-1.jpg"
+                      alt="Execution 1"
+                      width={400}
+                      height={400}
+                      className="img-fluid rounded"
+                    />
                   </div>
                   <div className="carousel-item">
-                    <Image src="/img/project-6.jpg" alt="Execution 2" width={400} height={400} className="img-fluid rounded" />
+                    <Image
+                      src="/img/project-6.jpg"
+                      alt="Execution 2"
+                      width={400}
+                      height={400}
+                      className="img-fluid rounded"
+                    />
                   </div>
-                </div>
-                <div className="carousel-indicators custom-indicators">
-                  <button type="button" data-bs-target="#carouselExecution" data-bs-slide-to="0" className="active"></button>
-                  <button type="button" data-bs-target="#carouselExecution" data-bs-slide-to="1"></button>
                 </div>
               </div>
             </div>
-          </div>
-          <div className="col-lg-2 d-none d-lg-flex align-items-center justify-content-center">
-            <div className="bg-gold rounded-circle" style={{ width: '20px', height: '20px', zIndex: 2 }}></div>
-          </div>
-          <div className="col-12 col-lg-5">
-            <div className="explanation-card bg-light shadow-sm p-4 rounded border-start border-3 border-primary ms-lg-auto" style={{ maxWidth: '400px' }}>
+
+            {/* Middle Dot */}
+            <div
+              className="position-absolute top-50 start-50 translate-middle bg-gold rounded-circle"
+              style={{ width: "20px", height: "20px", zIndex: 2 }}
+            ></div>
+
+            {/* Right Paragraph */}
+            <div
+              className="explanation-card bg-light shadow-sm p-4 rounded border-start border-3 border-primary"
+              style={{ width: "400px" }}
+            >
               <h6 className="fw-bold text-gold mb-2">Project Execution</h6>
-              <p className="text-gradient mb-0">The construction begins following approved drawings, supervised closely to ensure precision and quality.</p>
+              <p className="text-gradient mb-0">
+                The construction begins following approved drawings, supervised
+                closely to ensure precision and quality.
+              </p>
             </div>
           </div>
         </div>
-      </div>
 
-      <div className="text-center mt-4">
-        <i className="fa-solid fa-chevron-down fs-3 text-gold"></i>
+        <div className="text-center mt-4">
+          <i className="fa-solid fa-chevron-down fs-3 text-gold"></i>
+        </div>
       </div>
-</div>
       {/* Construction Process End */}
       <hr className="border-info"></hr>
       {/* FAQ Start */}

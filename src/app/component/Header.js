@@ -109,7 +109,7 @@ export default function Header() {
                         pathname === "/construction/residential" ? "active" : ""
                       }`}
                     >
-                      Residental
+                      Residential
                     </Link>
                     <Link
                       href="/construction/commercial"
@@ -144,7 +144,7 @@ export default function Header() {
                         pathname === "/interior/residential" ? "active" : ""
                       }`}
                     >
-                      Residental
+                      Residential
                     </Link>
                     <Link
                       href="/interior/commercial"
@@ -182,8 +182,65 @@ export default function Header() {
                   Contact Us
                 </Link>
               </div>
+              <span className="btn btn-outline-login m-2">Login</span>
             </div>
           </nav>
+        </div>
+      </div>
+      <div
+        className="modal fade"
+        id="loginModal"
+        tabIndex="-1"
+        aria-labelledby="loginModalLabel"
+        aria-hidden="true"
+      >
+        <div className="modal-dialog modal-dialog-centered">
+          <div className="modal-content rounded-4 shadow">
+            <div className="modal-header border-0">
+              <h5 className="modal-title fw-bold text-gradient text-center" id="loginModalLabel">
+                Admin Login
+              </h5>
+              <button
+                type="button"
+                className="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+
+            <div className="modal-body">
+              <form>
+                <div className="mb-3">
+                  <label htmlFor="email" className="form-label text-gradient">
+                    Email address
+                  </label>
+                  <input
+                    type="email"
+                    className="form-control text-gradient"
+                    id="email"
+                    placeholder="Enter email"
+                    required
+                  />
+                </div>
+
+                <div className="mb-3">
+                  <label htmlFor="password" className="form-label gradient">
+                    Password
+                  </label>
+                  <input
+                    type="password"
+                    className="form-control"
+                    id="password"
+                    placeholder="Enter password"
+                    required
+                  />
+                </div>
+                <button type="submit" className="btn btn-primary text-gold w-100 mt-3">
+                  Login
+                </button>
+              </form>
+            </div>
+          </div>
         </div>
       </div>
     </>
