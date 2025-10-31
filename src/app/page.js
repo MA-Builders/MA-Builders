@@ -35,18 +35,24 @@ export default function HomePage() {
           <source src="/img/kamadhenu.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
-        <div className="position-absolute top-50 start-50 translate-middle text-center text-white px-3">
+        <div className="position-absolute top-50 start-50 translate-middle text-center text-white px-3 hero-text">
           <h1
-            className="fw-bold mb-4 display-3 display-md-1 text-white"
+            className="fw-bold mb-4 text-white"
             data-aos="fade-up"
-            style={{ lineHeight: "1.2" }}
+            style={{
+              fontSize: "clamp(1.8rem,5w,4rem)",
+              lineHeight: "1.2",
+            }}
           >
             We Make Your <span className="text-gradient">Home</span> Better
           </h1>
           <h5
-            className="d-inline-block border border-2 border-light py-2 px-4 mb-0 fs-6 fs-md-5 text-white"
+            className="d-inline-block border border-2 border-light py-2 px-4 mb-0 text-white"
             data-aos="fade-up"
             data-aos-delay="200"
+            style={{
+              fontSize: "clamp(0.9rem, 2vw, 1.25rem)",
+            }}
           >
             An Award Winning Studio Since 1990
           </h5>
