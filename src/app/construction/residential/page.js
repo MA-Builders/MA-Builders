@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import Link from "next/link";
 
 const blogs = [
   {
@@ -80,9 +81,9 @@ export default function ConResidential() {
               <nav aria-label="breadcrumb">
                 <ol className="breadcrumb justify-content-center justify-content-lg-end mb-0">
                   <li className="breadcrumb-item">
-                    <a className="text-gold" href="/">
+                    <Link className="text-gold" href="/">
                       Home
-                    </a>
+                    </Link>
                   </li>
                   <li
                     className="breadcrumb-item text-gradient active"

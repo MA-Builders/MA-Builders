@@ -1,10 +1,10 @@
 "use client";
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect } from "react";
 
 export default function BlogPage() {
   useEffect(() => {
-    // Initialize Bootstrap carousel with smooth interval for all carousels
     if (typeof window !== "undefined" && window.bootstrap) {
       const carousels = document.querySelectorAll(".carousel");
       carousels.forEach((carousel, index) => {
@@ -33,9 +33,9 @@ export default function BlogPage() {
               <nav aria-label="breadcrumb">
                 <ol className="breadcrumb justify-content-center justify-content-lg-end mb-0">
                   <li className="breadcrumb-item">
-                    <a className="text-gold" href="/">
+                    <Link className="text-gold" href="/">
                       Home
-                    </a>
+                    </Link>
                   </li>
                   <li
                     className="breadcrumb-item text-gradient active"
@@ -49,7 +49,6 @@ export default function BlogPage() {
           </div>
         </div>
       </div>
-
       {/* Portfolio Section */}
       <div className="container-fluid py-5">
         <div className="container py-5">
@@ -65,7 +64,6 @@ export default function BlogPage() {
               our professional architects.
             </p>
           </div>
-
           <div className="row gy-5">
             {/* Project 1 */}
             <div className="col-lg-4 col-md-6">
@@ -93,7 +91,6 @@ export default function BlogPage() {
                       data-bs-slide-to="2"
                     ></button>
                   </div>
-
                   <div className="carousel-inner rounded-top-4">
                     <div className="carousel-item active">
                       <Image
@@ -102,7 +99,10 @@ export default function BlogPage() {
                         width={600}
                         height={400}
                         className="d-block w-100"
-                        style={{ objectFit: "cover", transition: "all 1s ease" }}
+                        style={{
+                          objectFit: "cover",
+                          transition: "all 1s ease",
+                        }}
                       />
                     </div>
                     <div className="carousel-item">
@@ -112,7 +112,10 @@ export default function BlogPage() {
                         width={600}
                         height={400}
                         className="d-block w-100"
-                        style={{ objectFit: "cover", transition: "all 1s ease" }}
+                        style={{
+                          objectFit: "cover",
+                          transition: "all 1s ease",
+                        }}
                       />
                     </div>
                     <div className="carousel-item">
@@ -122,12 +125,14 @@ export default function BlogPage() {
                         width={600}
                         height={400}
                         className="d-block w-100"
-                        style={{ objectFit: "cover", transition: "all 1s ease" }}
+                        style={{
+                          objectFit: "cover",
+                          transition: "all 1s ease",
+                        }}
                       />
                     </div>
                   </div>
                 </div>
-
                 <div className="card-body">
                   <h5 className="card-title fw-bold text-gradient">
                     Luxury Villa
@@ -148,7 +153,6 @@ export default function BlogPage() {
                 </div>
               </div>
             </div>
-
             {/* Project 2 */}
             <div className="col-lg-4 col-md-6">
               <div className="card border-0 shadow-lg h-100 rounded-4 overflow-hidden">
@@ -169,7 +173,7 @@ export default function BlogPage() {
                       data-bs-target="#carousel-2"
                       data-bs-slide-to="1"
                     ></button>
-                     <button
+                    <button
                       type="button"
                       data-bs-target="#carousel-1"
                       data-bs-slide-to="2"
@@ -184,7 +188,10 @@ export default function BlogPage() {
                         width={600}
                         height={400}
                         className="d-block w-100"
-                        style={{ objectFit: "cover", transition: "all 1s ease" }}
+                        style={{
+                          objectFit: "cover",
+                          transition: "all 1s ease",
+                        }}
                       />
                     </div>
                     <div className="carousel-item">
@@ -194,7 +201,10 @@ export default function BlogPage() {
                         width={600}
                         height={400}
                         className="d-block w-100"
-                        style={{ objectFit: "cover", transition: "all 1s ease" }}
+                        style={{
+                          objectFit: "cover",
+                          transition: "all 1s ease",
+                        }}
                       />
                     </div>
                     <div className="carousel-item">
@@ -204,7 +214,10 @@ export default function BlogPage() {
                         width={600}
                         height={400}
                         className="d-block w-100"
-                        style={{ objectFit: "cover", transition: "all 1s ease" }}
+                        style={{
+                          objectFit: "cover",
+                          transition: "all 1s ease",
+                        }}
                       />
                     </div>
                   </div>
@@ -230,7 +243,6 @@ export default function BlogPage() {
                 </div>
               </div>
             </div>
-
             {/* Project 3 */}
             <div className="col-lg-4 col-md-6">
               <div className="card border-0 shadow-lg h-100 rounded-4 overflow-hidden">
@@ -251,13 +263,12 @@ export default function BlogPage() {
                       data-bs-target="#carousel-3"
                       data-bs-slide-to="1"
                     ></button>
-                     <button
+                    <button
                       type="button"
                       data-bs-target="#carousel-1"
                       data-bs-slide-to="2"
                     ></button>
                   </div>
-
                   <div className="carousel-inner rounded-top-4">
                     <div className="carousel-item active">
                       <Image
@@ -266,7 +277,10 @@ export default function BlogPage() {
                         width={600}
                         height={400}
                         className="d-block w-100"
-                        style={{ objectFit: "cover", transition: "all 1s ease" }}
+                        style={{
+                          objectFit: "cover",
+                          transition: "all 1s ease",
+                        }}
                       />
                     </div>
                     <div className="carousel-item">
@@ -276,22 +290,27 @@ export default function BlogPage() {
                         width={600}
                         height={400}
                         className="d-block w-100"
-                        style={{ objectFit: "cover", transition: "all 1s ease" }}
+                        style={{
+                          objectFit: "cover",
+                          transition: "all 1s ease",
+                        }}
                       />
                     </div>
-                     <div className="carousel-item">
+                    <div className="carousel-item">
                       <Image
                         src="/img/project-4.jpg"
                         alt="Skyline Apartments"
                         width={600}
                         height={400}
                         className="d-block w-100"
-                        style={{ objectFit: "cover", transition: "all 1s ease" }}
+                        style={{
+                          objectFit: "cover",
+                          transition: "all 1s ease",
+                        }}
                       />
                     </div>
                   </div>
                 </div>
-
                 <div className="card-body">
                   <h5 className="card-title fw-bold text-gradient">
                     Skyline Apartments
