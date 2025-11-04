@@ -1,9 +1,27 @@
 "use client";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
 export default function OurTeam() {
+  const [members, setMembers] = useState([]);
+  const [loading, setLoading] = useState(true);
+  // Fetch members from API
+  useEffect(() => {
+    const fetchMembers = async () => {
+      try {
+        const res = await fetch("/api/member");
+        const data = await res.json();
+        setMembers(data);
+      } catch (error) {
+        console.error("Failed to fetch members:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchMembers();
+  }, []);
+
   return (
     <>
       {/* Hero Start */}
@@ -94,7 +112,6 @@ export default function OurTeam() {
                 take pride in creating long-lasting designs that bring our
                 client&apos;s dreams to life.
               </p>
-
               <div className="row g-3 text-center text-md-start">
                 {[
                   ["Award Winning", "Professional Staff"],
@@ -201,59 +218,73 @@ export default function OurTeam() {
         </div>
       </div>
       {/* Feature End */}
-
       {/* Team Start */}
       <div className="container-fluid bg-light py-5">
         <div className="container py-5">
-          <h1 className="mb-5 text-center text-gradient">
+        <h1 className="mb-5 text-center text-gradient">
             Our Professional{" "}
             <span className="text-uppercase text-gold bg-light px-2">
               Designers
             </span>
           </h1>
           <div className="row g-4 justify-content-center">
-            {[
-              { img: "team-1.jpg", name: "Boris Johnson" },
-              { img: "team-2.jpg", name: "Donald Pakura" },
-              { img: "team-3.jpg", name: "Bradley Gordon" },
-              { img: "team-4.jpg", name: "Alexander Bell" },
-            ].map((member, i) => (
-              <div
-                key={i}
-                className="col-sm-6 col-md-4 col-lg-3 wow fadeIn"
-                data-wow-delay={`${0.1 + i * 0.2}s`}
-              >
-                <div className="team-item position-relative overflow-hidden rounded">
-                  <Image
-                    className="img-fluid w-100"
-                    src={`/img/${member.img}`}
-                    alt={member.name}
-                    width={400}
-                    height={400}
-                  />
-                  <div className="team-overlay d-flex flex-column align-items-center justify-content-bottom text-center">
-                    <small className="mb-2 text-light">Architect</small>
-                    <h4 className="lh-base text-light">{member.name}</h4>
-                    <div className="d-flex justify-content-center">
-                      {[
-                        "facebook-f",
-                        "twitter",
-                        "instagram",
-                        "linkedin-in",
-                      ].map((icon, j) => (
-                        <a
-                          key={j}
-                          className="btn btn-outline-primary btn-sm-square border-2 me-2"
-                          href="#!"
-                        >
-                          <i className={`fab fa-${icon}`}></i>
-                        </a>
-                      ))}
+            {members.length === 0 ? (
+              <p className="text-center text-muted">No team members found.</p>
+            ) : (
+              members.map((m, i) => (
+                <div
+                  key={m._id || i}
+                  className="col-sm-6 col-md-4 col-lg-3 wow fadeIn"
+                  data-wow-delay={`${0.1 + i * 0.2}s`}
+                >
+                  <div className="team-item position-relative overflow-hidden rounded">
+                    <Image
+                      className="img-fluid w-100"
+                      src={m.imageUrl || "/img/default-avatar.jpg"}
+                      alt={m.name}
+                      width={400}
+                      height={400}
+                    />
+
+                    <div className="team-overlay d-flex flex-column align-items-center justify-content-bottom text-center">
+                      <small className="mb-2 text-light">{m.role}</small>
+                      <h4 className="lh-base text-light">{m.name}</h4>
+
+                      {/* ✅ Always show icons, clickable only if link exists */}
+                      <div className="d-flex justify-content-center">
+                        {[
+                          { key: "facebook", icon: "facebook-f" },
+                          { key: "twitter", icon: "twitter" },
+                          { key: "instagram", icon: "instagram" },
+                          { key: "linkedin", icon: "linkedin-in" },
+                        ].map((link, j) => {
+                          const url = m[link.key];
+                          return url ? (
+                            <Link
+                              key={j}
+                              href={url}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="btn btn-outline-primary btn-sm-square border-2 me-2"
+                            >
+                              <i className={`fab fa-${link.icon}`}></i>
+                            </Link>
+                          ) : (
+                            <button
+                              key={j}
+                              className="btn btn-outline-primary btn-sm-square border-2 me-2"
+                              title="No link available"
+                            >
+                              <i className={`fab fa-${link.icon}`}></i>
+                            </button>
+                          );
+                        })}
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))
+            )}
           </div>
         </div>
       </div>

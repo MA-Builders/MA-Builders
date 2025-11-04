@@ -1,5 +1,7 @@
 "use client";
 import Image from "next/image";
+import Link from "next/link";
+
 export default function ContactUsPage() {
   return (
     <>
@@ -16,9 +18,9 @@ export default function ContactUsPage() {
               <nav aria-label="breadcrumb">
                 <ol className="breadcrumb justify-content-center justify-content-lg-end mb-0">
                   <li className="breadcrumb-item">
-                    <a className="text-gold" href="/">
+                    <Link className="text-gold" href="/">
                       Home
-                    </a>
+                    </Link>
                   </li>
                   <li
                     className="breadcrumb-item text-gradient active"
@@ -53,7 +55,7 @@ export default function ContactUsPage() {
                 Get In Touch
               </h5>
               <h1 className="mb-4 text-gradient">Contact For Any Query</h1>
-              <a
+              <Link
                 href="/img/contact-map.jpg"
                 download="MA_Builders_Contact_Map.jpg"
                 className="d-inline-block mt-3"
@@ -70,7 +72,7 @@ export default function ContactUsPage() {
                     transition: "transform 0.3s ease",
                   }}
                 />
-              </a>
+              </Link>
             </div>
             <div className="col-lg-6 wow fadeIn" data-wow-delay="0.3s">
               <p className="text-center mb-4">
@@ -161,54 +163,7 @@ export default function ContactUsPage() {
           </div>
         </div>
       </div>
-
       {/* Contact End */}
-      {/* Newsletter Start */}
-      {/* <div className="container-fluid bg-primary hero-header p-2">
-        <div className="container p-0">
-          <div className="row g-0 align-items-center">
-            <div
-              className="col-md-5 ps-lg-0 text-start wow fadeIn"
-              data-wow-delay="0.2s"
-            >
-              <img
-                className="img-fluid w-100"
-                src="/img/newsletter.jpg"
-                alt="Newsletter"
-              />
-            </div>
-            <div
-              className="col-md-7 py-5 newsletter-text wow fadeIn"
-              data-wow-delay="0.5s"
-            >
-              <div className="p-5">
-                <h1 className="mb-5">
-                  Subscribe the{" "}
-                  <span className="text-uppercase text-primary bg-white px-2">
-                    Newsletter
-                  </span>
-                </h1>
-                <div className="position-relative w-100 mb-2">
-                  <input
-                    className="form-control border-0 w-100 ps-4 pe-5"
-                    type="text"
-                    placeholder="Enter Your Email"
-                    style={{ height: "60px" }}
-                  />
-                  <button
-                    type="button"
-                    className="btn shadow-none position-absolute top-0 end-0 mt-2 me-2"
-                  >
-                    <i className="fa fa-paper-plane text-primary fs-4"></i>
-                  </button>
-                </div>
-                <p className="mb-0">Diam sed sed dolor stet amet eirmod</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div> */}
-      {/* Newsletter End */}
     </>
   );
 }

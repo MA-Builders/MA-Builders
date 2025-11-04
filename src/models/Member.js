@@ -10,7 +10,7 @@ const MemberSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    image: {
+    imageUrl: {
       type: String,
     },
     facebook: { type: String },

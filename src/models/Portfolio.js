@@ -12,21 +12,18 @@ const PortfolioSchema = new mongoose.Schema(
     },
     type: {
       type: String,
+      enum:["Commercial","Residential"],
       required: true,
     },
-    // status: {
-    //   type: String,
-    //   required: true,
-    // },
+    status: {
+      type: String,
+      required: true,
+    },
     description: {
       type: String,
       required: true,
     },
-    image: [
-      {
-        type: String,
-      },
-    ],
+    images: [{ type: String }],
   },
   {
     timestamps: true,
