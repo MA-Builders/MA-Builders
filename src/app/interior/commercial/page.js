@@ -1,70 +1,36 @@
 "use client";
+import { useEffect, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
-const blogs = [
-  {
-    id: 1,
-    title: "5 Modern Architecture Trends to Watch in 2025",
-    category: "Architecture",
-    img: "/img/project-1.jpg",
-    date: "Oct 22, 2025",
-    author: "Admin",
-    description:
-      "Discover how sustainable materials and futuristic designs are reshaping modern living spaces.",
-  },
-  {
-    id: 2,
-    title: "Top 10 Interior Design Ideas for Small Spaces",
-    category: "Interior",
-    img: "/img/project-2.jpg",
-    date: "Oct 10, 2025",
-    author: "Sarah",
-    description:
-      "Transform limited spaces with these creative design hacks that add style and comfort.",
-  },
-  {
-    id: 3,
-    title: "How to Manage a Construction Project Efficiently",
-    category: "Construction",
-    img: "/img/project-3.jpg",
-    date: "Sep 28, 2025",
-    author: "Michael",
-    description:
-      "A practical guide for planning, budgeting, and executing construction projects seamlessly.",
-  },
-  {
-    id: 4,
-    title: "5 Modern Architecture Trends to Watch in 2025",
-    category: "Construction",
-    img: "/img/project-2.jpg",
-    date: "Oct 22, 2025",
-    author: "Admin",
-    description:
-      "Discover how sustainable materials and futuristic designs are reshaping modern living spaces.",
-  },
-  {
-    id: 5,
-    title: "5 Modern Architecture Trends to Watch in 2025",
-    category: "Interior",
-    img: "/img/project-3.jpg",
-    date: "Oct 22, 2025",
-    author: "Admin",
-    description:
-      "Discover how sustainable materials and futuristic designs are reshaping modern living spaces.",
-  },
-  {
-    id: 6,
-    title: "5 Modern Architecture Trends to Watch in 2025",
-    category: "Construction",
-    img: "/img/project-1.jpg",
-    date: "Oct 22, 2025",
-    author: "Admin",
-    description:
-      "Discover how sustainable materials and futuristic designs are reshaping modern living spaces.",
-  },
-];
+export default function ConCommercial() {
+  const [projects, setProjects] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-export default function IntCommercial() {
+  // ✅ Fetch only Interior → Commercial projects
+  useEffect(() => {
+    const fetchProjects = async () => {
+      try {
+        const res = await fetch("/api/project");
+        const data = await res.json();
+        if (res.ok) {
+          const filtered = data.filter(
+            (p) =>
+              p.category === "Interior" && p.subCategory === "Commercial"
+          );
+          setProjects(filtered);
+        } else {
+          console.error("Error fetching projects:", data.error);
+        }
+      } catch (err) {
+        console.error("Network error:", err);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchProjects();
+  }, []);
+
   return (
     <>
       {/* Hero Start */}
@@ -80,9 +46,9 @@ export default function IntCommercial() {
               <nav aria-label="breadcrumb">
                 <ol className="breadcrumb justify-content-center justify-content-lg-end mb-0">
                   <li className="breadcrumb-item">
-                    <a className="text-gold" href="/">
+                    <Link className="text-gold" href="/">
                       Home
-                    </a>
+                    </Link>
                   </li>
                   <li
                     className="breadcrumb-item text-gradient active"
@@ -97,6 +63,7 @@ export default function IntCommercial() {
         </div>
       </div>
       {/* Hero End */}
+
       {/* Blog Section */}
       <div className="container-fluid py-5">
         <div className="container py-5">
@@ -104,7 +71,7 @@ export default function IntCommercial() {
             <h1 className="mb-5 text-gradient">
               Our{" "}
               <span className="text-uppercase text-gold bg-light px-2">
-                Commercial Interiors
+                Commercial Projects
               </span>
             </h1>
             <p className="text-gradient mb-5">
@@ -112,48 +79,60 @@ export default function IntCommercial() {
               our professional architects.
             </p>
           </div>
-          <div className="row g-5">
-            {blogs.map((blog, index) => (
-              <div
-                key={blog.id}
-                className="col-lg-4 col-md-6 wow fadeIn"
-                data-wow-delay={`${0.1 + index * 0.2}s`}
-              >
-                <div className="card border-0 shadow-sm h-100 overflow-hidden blog-card rounded-4">
-                  <div className="position-relative rounded-top-4 overflow-hidden">
-                    <Image
-                      src={blog.img}
-                      alt={blog.title}
-                      className="card-img-top"
-                      width={600}
-                      height={400}
-                    />
-                    <div className="category-badge-custom position-absolute top-0 start-0 px-3 py-1">
-                      {blog.category}
+
+          {loading ? (
+            <p className="text-center text-muted">Loading projects...</p>
+          ) : projects.length === 0 ? (
+            <p className="text-center text-muted">No commercial projects found.</p>
+          ) : (
+            <div className="row g-5">
+              {projects.map((project, index) => (
+                <div
+                  key={project._id}
+                  className="col-lg-4 col-md-6 wow fadeIn"
+                  data-wow-delay={`${0.1 + index * 0.2}s`}
+                >
+                  <div className="card border-0 shadow-sm h-100 overflow-hidden blog-card rounded-4">
+                    <div className="position-relative rounded-top-4 overflow-hidden">
+                      <Image
+                        src={project.image || "/img/default.jpg"}
+                        alt={project.title}
+                        className="card-img-top"
+                        width={600}
+                        height={400}
+                      />
+                      <div className="category-badge-custom position-absolute top-0 start-0 px-3 py-1">
+                        {project.category}
+                      </div>
+                    </div>
+                    <div className="card-body p-4">
+                      <h5 className="card-title mb-3 fw-bold text-gradient">
+                        {project.title}
+                      </h5>
+                      <p className="card-text text-gradient">
+                        {project.description}
+                      </p>
+                      <a
+                        href="#!"
+                        className="read-more-btn-custom btn rounded-pill mt-3"
+                      >
+                        Read More
+                      </a>
+                    </div>
+                    <div className="card-footer bg-gradient d-flex justify-content-between align-items-center border-0 rounded-bottom-4">
+                      <small className="text-gold">
+                        <i className="fa fa-calendar-alt me-2 "></i>
+                        {new Date(project.date).toDateString()}
+                      </small>
+                      <small className="text-gold">
+                        <i className="fa fa-user me-2"></i> {project.author}
+                      </small>
                     </div>
                   </div>
-                  <div className="card-body p-4">
-                    <h5 className="card-title mb-3 fw-bold text-gradient">{blog.title}</h5>
-                    <p className="card-text text-gradient">{blog.description}</p>
-                    <a
-                      href="#!"
-                      className="read-more-btn-custom btn rounded-pill mt-3"
-                    >
-                      Read More
-                    </a>
-                  </div>
-                  <div className="card-footer bg-gradient d-flex justify-content-between align-items-center border-0 rounded-bottom-4">
-                    <small className="text-gold">
-                      <i className="fa fa-calendar-alt me-2"></i> {blog.date}
-                    </small>
-                    <small className="text-gold">
-                      <i className="fa fa-user me-2"></i> {blog.author}
-                    </small>
-                  </div>
                 </div>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
+          )}
         </div>
       </div>
     </>

@@ -20,13 +20,20 @@ const ProjectSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    images: [
-      {
-        type: String,
-      },
-    ],
-    location: {
+    image: {
       type: String,
+    },
+    author: {
+      type: String,
+    },
+    date: {
+      type: Date,
+      default: Date.now,
+    },
+    status: {
+      type: String,
+      enum: ["draft", "published"],
+      default: "published",
     },
   },
   {

@@ -1,8 +1,8 @@
 "use client";
 import Link from "next/link";
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
-import { usePathname } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 
 export default function Header() {
   const pathname = usePathname();
@@ -14,6 +14,49 @@ export default function Header() {
       }, 500);
     }
   }, []);
+
+  const router = useRouter();
+  const [form, setForm] = useState({ email: "", password: "" });
+  const [error, setError] = useState("");
+
+  const handleRegisterClick = () => {
+    const modal = bootstrap.Modal.getInstance(
+      document.getElementById("loginModal")
+    );
+    modal?.hide();
+    router.push("/register");
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setError("");
+
+    try {
+      const res = await fetch("/api/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+
+      const data = await res.json();
+      if (!res.ok) return setError(data.message);
+
+      localStorage.setItem("token", data.token);
+
+      const modal = bootstrap.Modal.getInstance(
+        document.getElementById("loginModal")
+      );
+      modal?.hide();
+
+      alert("Login successful!");
+      router.push("/admin/dashboard");
+    } catch {
+      setError("Login failed");
+    }
+  };
+
+  const handleChange = (e) =>
+    setForm({ ...form, [e.target.name]: e.target.value });
 
   return (
     <>
@@ -135,7 +178,7 @@ export default function Header() {
                     className="nav-link dropdown-toggle"
                     data-bs-toggle="dropdown"
                   >
-                    Interiors +
+                    Interior +
                   </Link>
                   <div className="dropdown-menu bg-light mt-2 text-center">
                     <Link
@@ -216,40 +259,55 @@ export default function Header() {
                 aria-label="Close"
               ></button>
             </div>
-
             <div className="modal-body">
-              <form>
+              <form onSubmit={handleSubmit}>
                 <div className="mb-3">
                   <label htmlFor="email" className="form-label text-gradient">
                     Email address
                   </label>
                   <input
                     type="email"
+                    name="email"
                     className="form-control text-gradient"
                     id="email"
                     placeholder="Enter email"
-                    required
+                    onChange={handleChange}
                   />
                 </div>
-
                 <div className="mb-3">
                   <label htmlFor="password" className="form-label gradient">
                     Password
                   </label>
                   <input
                     type="password"
+                    name="password"
                     className="form-control"
                     id="password"
                     placeholder="Enter password"
-                    required
+                    onChange={handleChange}
                   />
                 </div>
+                {/* ✅ Login Button */}
                 <button
                   type="submit"
                   className="btn btn-primary text-gold w-100 mt-3"
                 >
                   Login
                 </button>
+                {/* ✅ Register Link */}
+                <div className="text-center mt-3">
+                  <p className="mb-0">
+                    Don&apos;t have an account?{" "}
+                    <span
+                      href="/register"
+                      onClick={handleRegisterClick}
+                      className="text-gradient text-decoration-none fw-bold"
+                      data-bs-dismiss="modal"
+                    >
+                      Register New User
+                    </span>
+                  </p>
+                </div>
               </form>
             </div>
           </div>
