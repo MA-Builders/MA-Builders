@@ -15,10 +15,16 @@ export default function AdminHeader() {
     }
   }, []);
 
-  const handleLogout = () => {
-    localStorage.removeItem("adminToken");
+  const handleLogout = async () => {
+  try {
+    await fetch("/api/logout", { method: "POST" });
+    alert("Logged out successfully!");
     router.push("/");
-  };
+    window.location.reload();
+  } catch (error) {
+    console.error("Logout failed:", error);
+  }
+};
 
   return (
     <>
@@ -154,7 +160,7 @@ export default function AdminHeader() {
                 </Link>
                 <span
                   onClick={handleLogout}
-                  className="btn btn-outline-login ms-lg-3 mt-2 mt-lg-0"
+                  className="btn btn-outline-login ms-lg-3 mt-2 mt-lg-0 pb-1"
                 >
                   Logout
                 </span>

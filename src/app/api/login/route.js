@@ -9,8 +9,8 @@ export async function POST(req) {
     await ConnectMongoose();
     const { email, password } = await req.json();
 
-    if (!email || !password){
-            console.log("email and password mismatch")
+    if (!email || !password) {
+      console.log("email and password mismatch");
       return NextResponse.json(
         { message: "All fields are required" },
         { status: 400 }
@@ -33,10 +33,19 @@ export async function POST(req) {
       { expiresIn: "7d" }
     );
 
-    return NextResponse.json(
+    const response = NextResponse.json(
       { message: "Login successful", token },
       { status: 200 }
     );
+
+    response.cookies.set("adminToken", token, {
+      httpOnly: true,
+      secure: process.env.NODE_ENV === "production",
+      sameSite: "strict",
+      path: "/",
+      maxAge: 60 * 60 * 24 * 7, // 7 days
+    });
+    return response;
   } catch (err) {
     return NextResponse.json({ err: "Internal error" }, { status: 500 });
   }

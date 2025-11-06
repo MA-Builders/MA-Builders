@@ -1,8 +1,6 @@
 import { Geist, Geist_Mono } from "next/font/google";
-import Header from "./component/Header";
-import Footer from "./component/Footer";
+import LayoutWrapper from "./layoutwrapper";
 import Script from "next/script";
-
 import "../../public/css/style.css";
 import "../../public/css/bootstrap.min.css";
 import "../../public/lib/animate/animate.min.css";
@@ -82,9 +80,9 @@ export default function RootLayout({ children }) {
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         {/* ✅ Page Layout */}
-        <Header />
-        {children}
-        <Footer />
+        <LayoutWrapper>
+          {children}
+        </LayoutWrapper>
         {/* ✅ JS Dependencies (optimized loading) */}
         <Script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js" />
         <Script

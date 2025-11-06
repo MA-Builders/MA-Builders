@@ -20,7 +20,7 @@ export default function Footer() {
                 />
               </Link>
               <p className="mb-0 pt-3 text-gradient">
-                At MA Builders, we combine expert craftsmanship with innovative
+                We combine expert craftsmanship with innovative
                 design to deliver lasting results. <br/>From residential homes to
                 commercial spaces, our team ensures every project reflects
                 quality, trust, and attention to detail.

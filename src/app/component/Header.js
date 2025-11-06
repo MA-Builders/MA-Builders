@@ -295,7 +295,7 @@ export default function Header() {
                   Login
                 </button>
                 {/* ✅ Register Link */}
-                <div className="text-center mt-3">
+                {/* <div className="text-center mt-3">
                   <p className="mb-0">
                     Don&apos;t have an account?{" "}
                     <span
@@ -307,7 +307,7 @@ export default function Header() {
                       Register New User
                     </span>
                   </p>
-                </div>
+                </div> */}
               </form>
             </div>
           </div>
