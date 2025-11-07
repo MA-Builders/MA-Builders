@@ -5,6 +5,9 @@ import Image from "next/image";
 import { useRouter, usePathname } from "next/navigation";
 
 export default function Header() {
+  const router = useRouter();
+  const [form, setForm] = useState({ email: "", password: "" });
+  const [error, setError] = useState("");
   const pathname = usePathname();
   useEffect(() => {
     const spinner = document.getElementById("spinner");
@@ -15,17 +18,25 @@ export default function Header() {
     }
   }, []);
 
-  const router = useRouter();
-  const [form, setForm] = useState({ email: "", password: "" });
-  const [error, setError] = useState("");
+  useEffect(() => {
+    const navLinks = document.querySelectorAll(".navbar-nav .nav-link");
+    const navCollapse = document.querySelector(".navbar-collapse");
 
-  const handleRegisterClick = () => {
-    const modal = bootstrap.Modal.getInstance(
-      document.getElementById("loginModal")
-    );
-    modal?.hide();
-    router.push("/register");
-  };
+    navLinks.forEach((link) => {
+      link.addEventListener("click", () => {
+        const bsCollapse = bootstrap.Collapse.getInstance(navCollapse);
+        if (bsCollapse) {
+          bsCollapse.hide();
+        }
+      });
+    });
+
+    return () => {
+      navLinks.forEach((link) => {
+        link.removeEventListener("click", () => {});
+      });
+    };
+  }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
