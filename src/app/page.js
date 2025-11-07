@@ -37,7 +37,7 @@ export default function HomePage() {
         </video>
         {/* <div className="hero-overlay"></div> */}
         <div className="position-absolute top-50 start-50 translate-middle text-center text-white px-3 px-md-5">
-          <h1 className="display-3 fw-bold mb-4 text-white" data-aos="fade-up">
+          <h1 className="display-2 fw-bold mb-4 text-white" data-aos="fade-up">
             We Make Your <span className="text-muted">Living</span> Better
           </h1>
           <h5
