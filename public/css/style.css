@@ -92,6 +92,7 @@
   .navbar .navbar-nav .nav-link {
     margin-left: 0;
     padding: 10px 0;
+    height: 100dvh !important;
   }
 }
 
@@ -126,10 +127,11 @@
   height: 100vh;
 }
 .hero-header-home {
-  margin-top: -100px;
-  padding-top: 150px;
-  background: url(../img/hero-bg.jpg) top center no-repeat;
-  background-size: cover;
+  height: 100vh !important;
+  overflow: hidden !important;
+  position: relative !important;
+  background: url(../img/hero-bg.jpg) top center no-repeat !important;
+  background-size: cover !important;
 }
 
 .hero-header .breadcrumb-item + .breadcrumb-item::before {
@@ -427,8 +429,10 @@
 
   .position-absolute.top-50.start-50.translate-middle {
     position: relative !important;
+    top: auto !important;
+    left: auto !important;
     transform: none !important;
-    margin: 20px auto !important;
+    margin: 40px auto !important;
   }
 
   .timeline .border-start {
@@ -446,8 +450,30 @@
     font-size: 1rem !important;
   }
 
-  .hero-header-home video {
-    height: 60vh !important;
+  .hero-video {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+  }
+
+  .hero-overlay {
+    position: absolute !important;
+    inset: 0 !important;
+    background: rgba(
+      0,
+      0,
+      0,
+      0.4
+    ) !important; /* dark overlay for readability */
+  }
+
+  .hero-title {
+    font-size: clamp(1.5rem, 4vw, 3rem);
+    line-height: 1.2;
+  }
+
+  .hero-subtitle {
+    font-size: clamp(0.8rem, 2vw, 1rem);
   }
 
   .timeline-content img {

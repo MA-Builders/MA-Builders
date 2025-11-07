@@ -30,12 +30,13 @@ export default function HomePage() {
           loop
           muted={muted}
           playsInline
-          className="w-100 vh-100 object-fit-cover"
+          className="w-100 h-100 object-fit-cover hero-video"
         >
           <source src="/img/kamadhenu.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
-        <div className="position-absolute top-50 start-50 translate-middle text-center text-white">
+        {/* <div className="hero-overlay"></div> */}
+        <div className="position-absolute top-50 start-50 translate-middle text-center text-white px-3 px-md-5">
           <h1 className="display-3 fw-bold mb-4 text-white" data-aos="fade-up">
             We Make Your <span className="text-muted">Living</span> Better
           </h1>
@@ -50,7 +51,7 @@ export default function HomePage() {
         <button
           onClick={toggleMute}
           className="btn btn-outline-light rounded-circle position-absolute bottom-0 start-0 m-4 d-flex align-items-center justify-content-center"
-          style={{ width: "48px", height: "48px", backdropFilter: "blur(5px)" }}
+          style={{ width: "44px", height: "44px", backdropFilter: "blur(5px)" }}
           aria-label="Toggle audio"
         >
           {muted ? <VolumeX size={22} /> : <Volume2 size={22} />}
