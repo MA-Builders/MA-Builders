@@ -19,24 +19,38 @@ export default function Header() {
   }, []);
 
   useEffect(() => {
-    const navLinks = document.querySelectorAll(".navbar-nav .nav-link");
-    const navCollapse = document.querySelector(".navbar-collapse");
+  const navLinks = document.querySelectorAll(".navbar-nav .nav-link");
+  const dropdownItems = document.querySelectorAll(".dropdown-menu .dropdown-item");
+  const navCollapse = document.querySelector(".navbar-collapse");
 
+  const hideNavbar = () => {
+    const bsCollapse = bootstrap.Collapse.getInstance(navCollapse);
+    if (bsCollapse) {
+      bsCollapse.hide();
+    }
+  };
+
+  // Collapse when clicking a normal nav link
+  navLinks.forEach((link) => {
+    link.addEventListener("click", hideNavbar);
+  });
+
+  // Collapse when clicking a dropdown item (not the toggle)
+  dropdownItems.forEach((item) => {
+    item.addEventListener("click", hideNavbar);
+  });
+
+  // Cleanup
+  return () => {
     navLinks.forEach((link) => {
-      link.addEventListener("click", () => {
-        const bsCollapse = bootstrap.Collapse.getInstance(navCollapse);
-        if (bsCollapse) {
-          bsCollapse.hide();
-        }
-      });
+      link.removeEventListener("click", hideNavbar);
     });
+    dropdownItems.forEach((item) => {
+      item.removeEventListener("click", hideNavbar);
+    });
+  };
+}, []);
 
-    return () => {
-      navLinks.forEach((link) => {
-        link.removeEventListener("click", () => {});
-      });
-    };
-  }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
