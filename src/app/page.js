@@ -23,7 +23,7 @@ export default function HomePage() {
   return (
     <>
       {/* Hero Start */}
-      {/* <div className="container-fluid p-0 position-relative hero-header-home">
+      <div className="container-fluid p-0 position-relative hero-header-home">
         <video
           ref={videoRef}
           autoPlay
@@ -35,16 +35,12 @@ export default function HomePage() {
           <source src="/img/kamadhenu.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
-        <div className="position-absolute top-50 start-50 translate-middle text-center text-white px-3">
-          <h1
-            className="fw-bold mb-4 display-3 display-md-1 text-white"
-            data-aos="fade-up"
-            style={{ lineHeight: "1.2" }}
-          >
-            We Make Your <span className="text-gradient">Home</span> Better
+        <div className="position-absolute top-50 start-50 translate-middle text-center text-white">
+          <h1 className="display-3 fw-bold mb-4 text-white" data-aos="fade-up">
+            We Make Your <span className="text-muted">Living</span> Better
           </h1>
           <h5
-            className="d-inline-block border border-2 border-light py-2 px-4 mb-0 fs-6 fs-md-5 text-white"
+            className="d-inline-block border border-2 border-light text-white py-3 px-5 mb-0"
             data-aos="fade-up"
             data-aos-delay="200"
           >
@@ -59,32 +55,6 @@ export default function HomePage() {
         >
           {muted ? <VolumeX size={22} /> : <Volume2 size={22} />}
         </button>
-      </div> */}
-      <div className="container-fluid p-0 position-relative hero-header">
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="w-100 vh-100 object-fit-cover"
-        >
-          <source src="https://appaswamy.com/assets/web/kamadhenu.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-
-        {/* Overlay content */}
-        <div className="position-absolute top-50 start-50 translate-middle text-center text-white">
-          <h1 className="display-3 fw-bold mb-4 text-white" data-aos="fade-up">
-            We Make Your <span className="text-muted">Living</span> Better
-          </h1>
-          <h5
-            className="d-inline-block border border-2 border-light text-white py-3 px-5 mb-0"
-            data-aos="fade-up"
-            data-aos-delay="200"
-          >
-            An Award Winning Studio Since 1990
-          </h5>
-        </div>
       </div>
       {/* Hero End */}
       {/* Feature Start */}
