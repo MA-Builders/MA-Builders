@@ -32,7 +32,9 @@ export default function Header() {
 
   // Collapse when clicking a normal nav link
   navLinks.forEach((link) => {
-    link.addEventListener("click", hideNavbar);
+     if (!link.classList.contains("dropdown-toggle")) {
+      link.addEventListener("click", hideNavbar);
+    }
   });
 
   // Collapse when clicking a dropdown item (not the toggle)
@@ -74,7 +76,7 @@ export default function Header() {
       modal?.hide();
 
       alert("Login successful!");
-      router.push("/admin/dashboard");
+      router.push("/admin/member");
     } catch {
       setError("Login failed");
     }

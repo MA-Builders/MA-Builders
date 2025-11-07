@@ -97,14 +97,14 @@ export default function AdminHeader() {
 
             <div className="collapse navbar-collapse" id="adminNavbar">
               <div className="navbar-nav ms-auto">
-                <Link
+                {/* <Link
                   href="/admin/dashboard"
                   className={`nav-item nav-link ${
                     pathname === "/admin/dashboard" ? "active" : ""
                   }`}
                 >
                   Dashboard
-                </Link>
+                </Link> */}
                 <Link
                   href="/admin/member"
                   className={`nav-item nav-link ${

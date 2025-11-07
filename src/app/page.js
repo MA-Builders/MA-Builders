@@ -36,8 +36,8 @@ export default function HomePage() {
           Your browser does not support the video tag.
         </video>
         {/* <div className="hero-overlay"></div> */}
-        <div className="position-absolute top-50 start-50 translate-middle text-center text-white px-3 px-md-5">
-          <h1 className="display-2 fw-bold mb-4 text-white" data-aos="fade-up">
+        <div className="position-absolute top-50 start-50 translate-middle text-center text-white px-3 px-md-5 w-100">
+          <h1 className="display-3 fw-bold mb-4 text-white" data-aos="fade-up">
             We Make Your <span className="text-muted">Living</span> Better
           </h1>
           <h5
@@ -191,13 +191,11 @@ export default function HomePage() {
                 </div>
               </div>
             </div>
-
             {/* Middle Dot */}
             <div
               className="position-absolute top-50 start-50 translate-middle bg-gold rounded-circle"
               style={{ width: "20px", height: "20px", zIndex: 2 }}
             ></div>
-
             {/* Right Paragraph */}
             <div
               className="explanation-card bg-light shadow-sm p-4 rounded border-start border-3 border-primary"
