@@ -119,7 +119,7 @@ export default function AdminTeam() {
                 Add Member
               </h3>
             </div>
-            <div className="col-lg-6 animated slideInRight">
+            {/* <div className="col-lg-6 animated slideInRight">
               <nav aria-label="breadcrumb">
                 <ol className="breadcrumb justify-content-center justify-content-lg-end mb-0">
                   <li className="breadcrumb-item">
@@ -135,7 +135,7 @@ export default function AdminTeam() {
                   </li>
                 </ol>
               </nav>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

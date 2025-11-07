@@ -149,10 +149,10 @@ export default function Portfolio() {
           <div className="row g-5 align-items-center mb-5">
             <div className="col-lg-6 text-center text-lg-start">
               <h1 className="display-1 mb-0 animated slideInLeft text-gradient">
-                Portfolio
+                Add Portfolio
               </h1>
             </div>
-            <div className="col-lg-6 animated slideInRight">
+            {/* <div className="col-lg-6 animated slideInRight">
               <nav aria-label="breadcrumb">
                 <ol className="breadcrumb justify-content-center justify-content-lg-end mb-0">
                   <li className="breadcrumb-item">
@@ -168,7 +168,7 @@ export default function Portfolio() {
                   </li>
                 </ol>
               </nav>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

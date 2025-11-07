@@ -120,7 +120,7 @@ export default function AdminCommercial() {
                 Commercial
               </h1>
             </div>
-            <div className="col-lg-6 animated slideInRight">
+            {/* <div className="col-lg-6 animated slideInRight">
               <nav aria-label="breadcrumb">
                 <ol className="breadcrumb justify-content-center justify-content-lg-end mb-0">
                   <li className="breadcrumb-item">
@@ -136,7 +136,7 @@ export default function AdminCommercial() {
                   </li>
                 </ol>
               </nav>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
@@ -384,13 +384,13 @@ export default function AdminCommercial() {
                     <div className="d-flex justify-content-between mt-3">
                       <button
                         onClick={() => openEditModal(blog)}
-                        className="btn btn-sm btn-outline-primary"
+                        className="btn btn-sm btn-primary"
                       >
                         Edit
                       </button>
                       <button
                         onClick={() => handleDelete(blog._id)}
-                        className="btn btn-sm btn-outline-danger"
+                        className="btn btn-sm btn-danger"
                       >
                         Delete
                       </button>

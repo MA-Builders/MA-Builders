@@ -2,29 +2,37 @@
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
-import { useEffect } from "react";
+import { useState,useEffect } from "react";
 
 export default function AdminHeader() {
   const pathname = usePathname();
   const router = useRouter();
+  const [open, setOpen] = useState(false);
 
   useEffect(() => {
     const spinner = document.getElementById("spinner");
     if (spinner) {
-      setTimeout(() => spinner.classList.remove("show"), 400);
+      setTimeout(() => spinner.classList.remove("show"), 500);
     }
   }, []);
 
+  const handleToggle = () => setOpen(!open);
+
+  const handleRegister = () => {
+    console.log("Register clicked");
+    router.push("/admin/register");
+  };
+
   const handleLogout = async () => {
-  try {
-    await fetch("/api/logout", { method: "POST" });
-    alert("Logged out successfully!");
-    router.push("/");
-    window.location.reload();
-  } catch (error) {
-    console.error("Logout failed:", error);
-  }
-};
+    try {
+      await fetch("/api/logout", { method: "POST" });
+      alert("Logged out successfully!");
+      router.push("/");
+      window.location.reload();
+    } catch (error) {
+      console.error("Logout failed:", error);
+    }
+  };
 
   return (
     <>
@@ -43,7 +51,23 @@ export default function AdminHeader() {
       </div>
 
       {/* Navbar */}
-      <div className="container-fluid sticky-top bg-light border-bottom border-2 border-white">
+      <div
+        className="container-fluid sticky-top"
+        style={
+          pathname === "/admin/dashboard"
+            ? {
+                background: "rgba(245, 245, 245, 0.5)",
+                backdropFilter: "blur(8px)",
+                WebkitBackdropFilter: "blur(8px)",
+                transition:
+                  "background 0.3s ease-in-out, backdrop-filter 0.3s ease-in-out",
+              }
+            : {
+                transition:
+                  "background 0.3s ease-in-out, backdrop-filter 0.3s ease-in-out",
+              }
+        }
+      >
         <div className="container">
           <nav className="navbar navbar-expand-lg navbar-light">
             <Link
@@ -104,7 +128,9 @@ export default function AdminHeader() {
                     <Link
                       href="/admin/construction/commercial"
                       className={`dropdown-item ${
-                        pathname === "/admin/construction/commercial" ? "active" : ""
+                        pathname === "/admin/construction/commercial"
+                          ? "active"
+                          : ""
                       }`}
                     >
                       Add Commercial
@@ -112,7 +138,9 @@ export default function AdminHeader() {
                     <Link
                       href="/admin/construction/residential"
                       className={`dropdown-item ${
-                        pathname === "/admin/construction/residential" ? "active" : ""
+                        pathname === "/admin/construction/residential"
+                          ? "active"
+                          : ""
                       }`}
                     >
                       Add Residential
@@ -135,7 +163,9 @@ export default function AdminHeader() {
                     <Link
                       href="/admin/interior/commercial"
                       className={`dropdown-item ${
-                        pathname === "/admin/interior/commercial" ? "active" : ""
+                        pathname === "/admin/interior/commercial"
+                          ? "active"
+                          : ""
                       }`}
                     >
                       Add Commercial
@@ -143,7 +173,9 @@ export default function AdminHeader() {
                     <Link
                       href="/admin/interior/residential"
                       className={`dropdown-item ${
-                        pathname === "/admin/interior/residential" ? "active" : ""
+                        pathname === "/admin/interior/residential"
+                          ? "active"
+                          : ""
                       }`}
                     >
                       Add Residential
@@ -158,12 +190,35 @@ export default function AdminHeader() {
                 >
                   Add Portfolio
                 </Link>
-                <span
-                  onClick={handleLogout}
-                  className="btn btn-outline-login ms-lg-3 mt-2 mt-lg-0 pb-1"
-                >
-                  Logout
-                </span>
+                <div className="position-relative d-inline-block">
+                  {/* Main toggle button */}
+                  <button
+                    onClick={handleToggle}
+                    className="btn btn-outline-login ms-lg-3 mt-2 mb-1 mt-lg-0 pb-1"
+                  >
+                    User ▾
+                  </button>
+                  {/* Dropdown section */}
+                  {open && (
+                    <div
+                      className="position-absolute p-2"
+                      style={{ top: "110%", right:"-13px", zIndex: 10 }}
+                    >
+                      <button
+                        onClick={handleLogout}
+                        className="btn btn-sm btn-danger w-100 mb-2"
+                      >
+                        Logout
+                      </button>
+                      <button
+                        onClick={handleRegister}
+                        className="btn btn-sm btn-primary w-100"
+                      >
+                        Register
+                      </button>
+                    </div>
+                  )}
+                </div>
               </div>
             </div>
           </nav>
