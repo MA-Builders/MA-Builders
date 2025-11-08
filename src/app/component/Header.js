@@ -76,7 +76,7 @@ export default function Header() {
       modal?.hide();
 
       alert("Login successful!");
-      router.push("/admin/member");
+      window.location.href ="/admin/member"
     } catch {
       setError("Login failed");
     }

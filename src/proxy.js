@@ -13,18 +13,18 @@ export default function middleware(request) {
       homeUrl.searchParams.set("from",pathname);
       return NextResponse.redirect(homeUrl);
     }
+    const res = NextResponse.next();
+    res.headers.set("Cache-Control", "no-store, no-cache, must-revalidate");
+    res.headers.set("Pragma", "no-cache");
+    res.headers.set("Expires", "0");
+    return res;
   }
 
   //  Prevent logged-in admin from seeing login page again
-  if (pathname === "/" && token) {
-    console.log("🔁 Token found. Redirecting to /admin/dashboard");
-    const dashboardUrl = new URL("/admin/dashboard", request.url);
-    return NextResponse.redirect(dashboardUrl);
-  }
 
   return NextResponse.next();
 }
 
 export const config = {
-  matcher: ["/admin/:path*"],
+  matcher: ["/","/admin/:path*"],
 };

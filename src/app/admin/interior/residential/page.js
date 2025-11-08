@@ -353,7 +353,7 @@ export default function AdminCommercial() {
             <h1 className="mb-5 text-gradient">
               Our{" "}
               <span className="text-uppercase text-gold bg-light px-2">
-                Commercial Projects
+                Residential Projects
               </span>
             </h1>
           </div>

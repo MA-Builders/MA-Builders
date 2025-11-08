@@ -27,8 +27,7 @@ export default function AdminHeader() {
     try {
       await fetch("/api/logout", { method: "POST" });
       alert("Logged out successfully!");
-      router.push("/");
-      window.location.reload();
+      window.location.href="/";
     } catch (error) {
       console.error("Logout failed:", error);
     }
