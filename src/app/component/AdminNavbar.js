@@ -2,7 +2,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
-import { useState,useEffect } from "react";
+import { useState, useEffect } from "react";
 
 export default function AdminHeader() {
   const pathname = usePathname();
@@ -16,6 +16,50 @@ export default function AdminHeader() {
     }
   }, []);
 
+  useEffect(() => {
+    const navLinks = document.querySelectorAll(".navbar-nav .nav-link");
+    const dropdownItems = document.querySelectorAll(
+      ".dropdown-menu .dropdown-item"
+    );
+    const navCollapse = document.querySelector(".navbar-collapse");
+    const userDropdownButtons = document.querySelectorAll(".user-dropdown button");
+    
+    const hideNavbar = () => {
+      const bsCollapse = bootstrap.Collapse.getInstance(navCollapse);
+      if (bsCollapse) {
+        bsCollapse.hide();
+      }
+    };
+
+    // Collapse when clicking a normal nav link
+    navLinks.forEach((link) => {
+      if (!link.classList.contains("dropdown-toggle")) {
+        link.addEventListener("click", hideNavbar);
+      }
+    });
+
+    // Collapse when clicking a dropdown item (not the toggle)
+    dropdownItems.forEach((item) => {
+      item.addEventListener("click", hideNavbar);
+    });
+    userDropdownButtons.forEach((btn) => {
+      btn.addEventListener("click", hideNavbar);
+    });
+
+    // Cleanup
+    return () => {
+      navLinks.forEach((link) => {
+        link.removeEventListener("click", hideNavbar);
+      });
+      dropdownItems.forEach((item) => {
+        item.removeEventListener("click", hideNavbar);
+      });
+      userDropdownButtons.forEach((btn) =>
+        btn.removeEventListener("click", hideNavbar)
+      );
+    };
+  }, []);
+
   const handleToggle = () => setOpen(!open);
 
   const handleRegister = () => {
@@ -27,7 +71,7 @@ export default function AdminHeader() {
     try {
       await fetch("/api/logout", { method: "POST" });
       alert("Logged out successfully!");
-      window.location.href="/";
+      window.location.href = "/";
     } catch (error) {
       console.error("Logout failed:", error);
     }
@@ -201,7 +245,7 @@ export default function AdminHeader() {
                   {open && (
                     <div
                       className="position-absolute p-2"
-                      style={{ top: "110%", right:"-13px", zIndex: 10 }}
+                      style={{ top: "110%", right: "-13px", zIndex: 10 }}
                     >
                       <button
                         onClick={handleLogout}
