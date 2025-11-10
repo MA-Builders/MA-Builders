@@ -81,32 +81,38 @@ export default function Footer() {
               <Link href="/our-team" className="btn btn-link">
                 About Us
               </Link>
-              <Link href="contact-us" className="btn btn-link">
+              <Link href="/contact-us" className="btn btn-link">
                 Contact Us
               </Link>
-              <Link href="#!" className="btn btn-link">
+              <Link href="/plan" className="btn btn-link">
+               Plan
+              </Link>
+              <Link href="/calculator" className="btn btn-link">
+               Calculator
+              </Link>
+              {/* <Link href="#!" className="btn btn-link">
                 Privacy Policy
               </Link>
               <Link href="#!" className="btn btn-link">
                 Terms &amp; Condition
-              </Link>
+              </Link> */}
             </div>
             {/* Services */}
             <div className="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.7s">
               <h5 className="text-gold mb-4">Our Services</h5>
-              <Link href="#!" className="btn btn-link">
+              <Link href="/contact-us" className="btn btn-link">
                 Project Planning
               </Link>
-              <Link href="#!" className="btn btn-link">
+              <Link href="/contact-us" className="btn btn-link">
                 Civil Work
               </Link>
-              <Link href="#!" className="btn btn-link">
+              <Link href="/contact-us" className="btn btn-link">
                 Interior Design
               </Link>
-              <Link href="#!" className="btn btn-link">
+              <Link href="/contact-us" className="btn btn-link">
                 Landscape Design
               </Link>
-              <Link href="#!" className="btn btn-link">
+              <Link href="/contact-us" className="btn btn-link">
                 Renovation
               </Link>
             </div>

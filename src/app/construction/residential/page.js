@@ -39,7 +39,7 @@ export default function ConCommercial() {
           <div className="row g-5 align-items-center mb-5">
             <div className="col-lg-6 text-center text-lg-start">
               <h1 className="display-1 mb-0 animated slideInLeft text-gradient">
-                Commercial
+                Residential
               </h1>
             </div>
             <div className="col-lg-6 animated slideInRight">
@@ -54,7 +54,7 @@ export default function ConCommercial() {
                     className="breadcrumb-item text-gradient active"
                     aria-current="page"
                   >
-                    Commercial
+                    Residential
                   </li>
                 </ol>
               </nav>

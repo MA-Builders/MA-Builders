@@ -5,6 +5,7 @@ import Image from "next/image";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import PricingSection from "./plan/page";
 
 export default function HomePage() {
   const videoRef = useRef(null);
@@ -314,7 +315,7 @@ export default function HomePage() {
               </div>
               <div className="timeline-dot"></div>
               <div className="timeline-text-box">
-                <h6 className="fw-bold text-gold mb-2 text-center3">
+                <h6 className="fw-bold text-gold mb-2 text-center">
                   Design Discussion
                 </h6>
                 <p className="text-gradient mb-0">
@@ -570,7 +571,7 @@ export default function HomePage() {
               </div>
               <div className="timeline-dot"></div>
               <div className="timeline-text-box">
-                <h6 className="fw-bold text-gold mb-2">Project Execution</h6>
+                <h6 className="fw-bold text-gold mb-2 text-center">Project Execution</h6>
                 <p className="text-gradient mb-0">
                   The construction begins following approved drawings,
                   supervised closely to ensure precision and quality.
@@ -739,6 +740,8 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+      <hr/>
+      <PricingSection/>
     </>
   );
 }
