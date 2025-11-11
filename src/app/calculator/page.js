@@ -11,6 +11,10 @@ export default function ConstructionCalculator() {
   const [compoundWall, setCompoundWall] = useState(0);
   const [solarPower, setSolarPower] = useState(0);
   const [isAccordionOpen, setIsAccordionOpen] = useState(true);
+  const [name, setName] = useState("");
+  const [location, setLocation] = useState("");
+  const [mobile, setMobile] = useState("");
+  const [email, setEmail] = useState("");
 
   const packageValues = {
     Basic: 1899,
@@ -44,8 +48,32 @@ export default function ConstructionCalculator() {
 
   const total = calculateTotal();
 
-  const handleSubmit = () => {
-    alert(`Total Construction Cost: ₹ ${total.toLocaleString("en-IN")}`);
+  const handleSubmit = async () => {
+    const payload = {
+      name,
+      location,
+      mobile,
+      email,
+      constructionArea,
+      packageType,
+      carParking,
+      sump,
+      wasteTank,
+      compoundWall,
+      solarPower,
+      total,
+    };
+    const res = await fetch("/api/send-summary", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+    });
+    const data = await res.json();
+    if (res.ok) {
+      alert("✅ PDF sent to your mail!");
+    } else {
+      alert("❌ Failed to send mail!");
+    }
   };
 
   return (
@@ -197,15 +225,73 @@ export default function ConstructionCalculator() {
                   type="range"
                   className="form-range"
                   min="0"
-                  max="50"
+                  max="10"
                   step="1"
                   value={solarPower}
                   onChange={(e) => setSolarPower(Number(e.target.value))}
                 />
                 <div className="d-flex justify-content-between text-gradient small">
                   <span>0 kW</span>
-                  <span>50 kW</span>
+                  <span>10 kW</span>
                 </div>
+              </div>
+              {/* Name */}
+              <div className="mb-4">
+                <strong>
+                  <label className="form-label text-gradient">Your Name</label>
+                </strong>
+                <input
+                  type="text"
+                  className="form-control"
+                  placeholder="Name"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                />
+              </div>
+
+              {/* Location */}
+              <div className="mb-4">
+                <strong>
+                  <label className="form-label text-gradient">Location</label>
+                </strong>
+                <input
+                  type="text"
+                  className="form-control"
+                  placeholder="Location"
+                  value={location}
+                  onChange={(e) => setLocation(e.target.value)}
+                />
+              </div>
+
+              {/* Mobile Number */}
+              <div className="mb-4">
+                <strong>
+                  <label className="form-label text-gradient">
+                    Mobile Number
+                  </label>
+                </strong>
+                <input
+                  type="number"
+                  className="form-control"
+                  placeholder="Mobile Number"
+                  value={mobile}
+                  onChange={(e) => setMobile(e.target.value)}
+                />
+              </div>
+              {/* Email */}
+              <div className="mb-4">
+                <strong>
+                  <label className="form-label text-gradient">
+                    Email Address
+                  </label>
+                </strong>
+                <input
+                  type="email"
+                  className="form-control"
+                  placeholder="Enter your email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                />
               </div>
             </div>
           </div>
@@ -372,8 +458,43 @@ export default function ConstructionCalculator() {
                   <h5 className="text-end text-gradient fw-bold">
                     ₹ {total.toLocaleString("en-IN")}
                   </h5>
+                  {/* Name */}
+                  <div className="mb-3 text-gradient">
+                    <strong>
+                      <label className="form-label">Name</label>
+                    </strong>
+                    <div className="text-end fw-bold">
+                      {name || "Not Provided"}
+                    </div>
+                  </div>
+                  {/* Location */}
+                  <div className="mb-3 text-gradient">
+                    <strong>
+                      <label className="form-label">Location</label>
+                    </strong>
+                    <div className="text-end fw-bold">
+                      {location || "Not Provided"}
+                    </div>
+                  </div>
+                  {/* Mobile */}
+                  <div className="mb-3 text-gradient">
+                    <strong>
+                      <label className="form-label">Mobile Number</label>
+                    </strong>
+                    <div className="text-end fw-bold">
+                      {mobile || "Not Provided"}
+                    </div>
+                  </div>
+                  {/* Email */}
+                  <div className="mb-3 text-gradient">
+                    <strong>
+                      <label className="form-label">Email</label>
+                    </strong>
+                    <div className="text-end fw-bold">
+                      {email || "Not Provided"}
+                    </div>
+                  </div>
                 </div>
-
                 <button
                   type="button"
                   onClick={handleSubmit}
