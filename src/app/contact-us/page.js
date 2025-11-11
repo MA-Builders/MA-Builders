@@ -113,10 +113,8 @@ const handleSubmit = async (e) => {
               </Link>
             </div>
             <div className="col-lg-6 wow fadeIn" data-wow-delay="0.3s">
-              <p className="text-center mb-4">
-                The contact form is currently inactive. Get a functional and
-                working contact form with Ajax & PHP in a few minutes. Just copy
-                and paste the files, add a little code and you&apos;re done.
+              <p className="text-center mb-1">
+                If You Have Any Query, Please Contact Us
               </p>
               <form className="pt-5 text-gradient" onSubmit={handleSubmit}>
                 <div className="row g-3">
