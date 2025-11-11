@@ -1,10 +1,8 @@
 import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
-import chromium from "@sparticuz/chromium";
-import puppeteer from "puppeteer-core";
-import puppeteerLocal from "puppeteer";
+import puppeteer from "puppeteer";
 
-export const runtime = "nodejs"; // ✅ Required on Vercel for Puppeteer
+export const runtime = "nodejs";
 
 export async function POST(req) {
   try {
@@ -77,30 +75,21 @@ export async function POST(req) {
       </html>
     `;
 
-    let browser;
-
-    // ✅ LOCAL DEVELOPMENT (Windows/Mac/Linux)
-    if (process.env.NODE_ENV === "development") {
-      browser = await puppeteerLocal.launch({
-        headless: true,
-        args: ["--no-sandbox", "--disable-setuid-sandbox"],
-      });
-    }
-
-    // ✅ PRODUCTION (Vercel serverless)
-    else {
-      browser = await puppeteer.launch({
-        args: chromium.args,
-        defaultViewport: chromium.defaultViewport,
-        executablePath: await chromium.executablePath(),
-        headless: chromium.headless,
-      });
-    }
+    // ✅ Launch Puppeteer normally (Hostinger supports this)
+    const browser = await puppeteer.launch({
+      headless: true,
+      args: ["--no-sandbox", "--disable-setuid-sandbox"],
+    });
 
     // ✅ Generate PDF
     const page = await browser.newPage();
     await page.setContent(htmlContent, { waitUntil: "networkidle0" });
-    const pdfBuffer = await page.pdf({ format: "A4", printBackground: true });
+
+    const pdfBuffer = await page.pdf({
+      format: "A4",
+      printBackground: true,
+    });
+
     await browser.close();
 
     // ✅ Nodemailer
