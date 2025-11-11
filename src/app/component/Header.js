@@ -274,7 +274,7 @@ export default function Header() {
           <div className="modal-content rounded-4 shadow">
             <div className="modal-header border-0">
               <h5
-                className="modal-title fw-bold text-gradient"
+                className="fw-bold text-gradient w-100 text-center"
                 id="loginModalLabel"
               >
                 Admin Login
