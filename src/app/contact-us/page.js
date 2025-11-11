@@ -1,8 +1,46 @@
 "use client";
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
 export default function ContactUsPage() {
+ const [form, setForm] = useState({
+  name: "",
+  email: "",
+  mobileNumber: "",
+  subject: "",
+  message: "",
+});
+const [status, setStatus] = useState("");
+const handleChange = (e) => {
+  setForm({ ...form, [e.target.name]: e.target.value });
+};
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  setStatus("Sending...");
+
+  const res = await fetch("/api/send-mail", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(form),
+  });
+  const data = await res.json();
+  if (res.ok) {
+    setStatus("Message sent successfully!");
+    setForm({
+      name: "",
+      email: "",
+      mobileNumber: "",
+      subject: "",
+      message: "",
+    });
+  } else {
+    setStatus("Failed to send message.");
+  }
+};
+
   return (
     <>
       {/* Hero Start */}
@@ -78,17 +116,21 @@ export default function ContactUsPage() {
               <p className="text-center mb-4">
                 The contact form is currently inactive. Get a functional and
                 working contact form with Ajax & PHP in a few minutes. Just copy
-                and paste the files, add a little code and you're done.
+                and paste the files, add a little code and you&apos;re done.
               </p>
-              <form className="pt-5 text-gradient">
+              <form className="pt-5 text-gradient" onSubmit={handleSubmit}>
                 <div className="row g-3">
-                  <div className="col-md-6">
+                  <div className="col-md-12">
                     <div className="form-floating">
                       <input
                         type="text"
                         className="form-control"
                         id="name"
+                        name="name"
                         placeholder="Your Name"
+                        value={form.name}
+                        onChange={handleChange}
+                        required
                       />
                       <label htmlFor="name">Your Name</label>
                     </div>
@@ -99,9 +141,28 @@ export default function ContactUsPage() {
                         type="email"
                         className="form-control"
                         id="email"
+                        name="email"
                         placeholder="Your Email"
+                        value={form.email}
+                        onChange={handleChange}
+                        required
                       />
                       <label htmlFor="email">Your Email</label>
+                    </div>
+                  </div>
+                  <div className="col-md-6">
+                    <div className="form-floating">
+                      <input
+                        type="text"
+                        className="form-control"
+                        id="mobileNumber"
+                        name="mobileNumber"
+                        placeholder="Your Mobile Number"
+                        value={form.mobileNumber}
+                        onChange={handleChange}
+                        required
+                      />
+                      <label htmlFor="mobileNumber">Your Mobile Number</label>
                     </div>
                   </div>
                   <div className="col-12">
@@ -110,7 +171,11 @@ export default function ContactUsPage() {
                         type="text"
                         className="form-control"
                         id="subject"
+                        name="subject"
                         placeholder="Subject"
+                        value={form.subject}
+                        onChange={handleChange}
+                        required
                       />
                       <label htmlFor="subject">Subject</label>
                     </div>
@@ -121,7 +186,11 @@ export default function ContactUsPage() {
                         className="form-control"
                         placeholder="Leave a message here"
                         id="message"
+                        name="message"
                         style={{ height: "150px" }}
+                        onChange={handleChange}
+                        value={form.message}
+                        required
                       ></textarea>
                       <label htmlFor="message">Message</label>
                     </div>
@@ -136,6 +205,7 @@ export default function ContactUsPage() {
                   </div>
                 </div>
               </form>
+              <p className="text-gradient text-center pt-2">{status}</p>
             </div>
             {/* Google Map */}
             <div className="row pt-5 pb-5">

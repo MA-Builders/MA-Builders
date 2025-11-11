@@ -172,7 +172,7 @@ export default function Header() {
                   >
                     Construction +
                   </Link>
-                  <div className="dropdown-menu bg-light mt-2 text-center">
+                  <div className="dropdown-menu bg-white-smoke mt-2 text-center">
                     <Link
                       href="/construction/residential"
                       className={`dropdown-item ${
@@ -207,7 +207,7 @@ export default function Header() {
                   >
                     Interior +
                   </Link>
-                  <div className="dropdown-menu bg-light mt-2 text-center">
+                  <div className="dropdown-menu bg-white-smoke mt-2 text-center">
                     <Link
                       href="/interior/residential"
                       className={`dropdown-item ${

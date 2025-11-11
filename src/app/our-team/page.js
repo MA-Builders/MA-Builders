@@ -61,28 +61,41 @@ export default function OurTeam() {
           <div className="row g-5 align-items-center">
             {/* Left Images */}
             <div className="col-lg-6 col-md-12">
-              <div className="row">
-                <div className="col-6 mb-3 wow fadeIn" data-wow-delay="0.1s">
+              <div className="row g-3 g-md-4">
+                {/* Left Image */}
+                <div
+                  className="col-6 mb-3 mb-md-0 wow fadeIn"
+                  data-wow-delay="0.1s"
+                >
                   <Image
-                    className="img-fluid rounded"
+                    className="img-fluid rounded w-100"
                     src="/img/about-1.jpg"
-                    alt=""
+                    alt="MA Builders Construction Work"
                     width={500}
                     height={500}
+                    style={{ objectFit: "cover", height: "100%" }}
                   />
                 </div>
+                {/* Right Column */}
                 <div className="col-6 wow fadeIn" data-wow-delay="0.3s">
-                  <Image
-                    className="img-fluid h-75 rounded"
-                    src="/img/about-2.jpg"
-                    alt=""
-                    width={500}
-                    height={500}
-                  />
-                  <div className="h-25 d-flex align-items-center text-center bg-gradient px-3 mt-3 mt-md-0 rounded">
-                    <h4 className="text-gold lh-base mb-0 fs-6 fs-md-5">
-                      Award Winning Studio Since 2019
-                    </h4>
+                  <div className="h-100 d-flex flex-column">
+                    {/* Top Image */}
+                    <div className="mb-3  flex-grow-1">
+                      <Image
+                        className="img-fluid rounded w-100 h-100"
+                        src="/img/about-2.jpg"
+                        alt="MA Builders Quality Work"
+                        width={500}
+                        height={500}
+                        style={{ objectFit: "cover", minHeight: "200px" }}
+                      />
+                    </div>
+                    {/* Award Banner */}
+                    <div className=" d-flex align-items-center justify-content-center text-center bg-gradient px-3 py-3 py-md-4 rounded">
+                      <h4 className="text-gold lh-base mb-0 fs-6 fs-md-5 fs-lg-4">
+                        Award Winning Studio Since 2019
+                      </h4>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -221,7 +234,7 @@ export default function OurTeam() {
       {/* Team Start */}
       <div className="container-fluid bg-light py-5">
         <div className="container py-5">
-        <h1 className="mb-5 text-center text-gradient">
+          <h1 className="mb-5 text-center text-gradient">
             Our Professional{" "}
             <span className="text-uppercase text-gold bg-light px-2">
               Designers
