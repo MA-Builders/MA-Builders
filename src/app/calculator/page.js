@@ -176,14 +176,14 @@ export default function ConstructionCalculator() {
                   type="range"
                   className="form-range"
                   min="0"
-                  max="1000"
-                  step="10"
+                  max="10"
+                  step="1"
                   value={compoundWall}
                   onChange={(e) => setCompoundWall(Number(e.target.value))}
                 />
                 <div className="d-flex justify-content-between text-gradient small">
                   <span>0</span>
-                  <span>1000</span>
+                  <span>10</span>
                 </div>
               </div>
               <div className="mb-4">
