@@ -15,6 +15,7 @@ export default function ConstructionCalculator() {
   const [location, setLocation] = useState("");
   const [mobile, setMobile] = useState("");
   const [email, setEmail] = useState("");
+  const [status, setStatus] = useState("");
 
   const packageValues = {
     Basic: 1899,
@@ -49,6 +50,17 @@ export default function ConstructionCalculator() {
   const total = calculateTotal();
 
   const handleSubmit = async () => {
+    if (
+      !name ||
+      !email ||
+      !mobile ||
+      !location ||
+      !packageType ||
+      constructionArea === 0
+    ) {
+      alert("Please fill all required fields before submitting!");
+      return;
+    }
     const payload = {
       name,
       location,
@@ -70,9 +82,20 @@ export default function ConstructionCalculator() {
     });
     const data = await res.json();
     if (res.ok) {
-      alert("✅ PDF sent to your mail!");
+      setName("");
+      setLocation("");
+      setMobile("");
+      setEmail("");
+      setConstructionArea("0");
+      setPackageType("");
+      setCarParking("0");
+      setSump("0");
+      setWasteTank("0");
+      setCompoundWall("0");
+      setSolarPower("0");
+      setStatus("Submitted successfully");
     } else {
-      alert("❌ Failed to send mail!");
+      setStatus("Failed to send mail!");
     }
   };
 
@@ -309,7 +332,6 @@ export default function ConstructionCalculator() {
                 {isAccordionOpen ? "-" : "+"}
               </button>
             </div>
-
             <div
               className={`accordion-content ${isAccordionOpen ? "" : "d-none"}`}
             >
@@ -340,7 +362,6 @@ export default function ConstructionCalculator() {
                   </strong>
                   <div className="text-end fw-bold">{carParking}</div>
                 </div>
-
                 <div className="mb-3 text-gradient">
                   <strong>
                     <label className="form-label">
@@ -349,7 +370,6 @@ export default function ConstructionCalculator() {
                   </strong>
                   <div className="text-end fw-bold">{sump}</div>
                 </div>
-
                 <div className="mb-3 text-gradient">
                   <strong>
                     <label className="form-label">
@@ -359,7 +379,6 @@ export default function ConstructionCalculator() {
                   </strong>
                   <div className="text-end fw-bold">{wasteTank}</div>
                 </div>
-
                 <div className="mb-3 text-gradient">
                   <strong>
                     <label className="form-label">
@@ -369,7 +388,6 @@ export default function ConstructionCalculator() {
                   </strong>
                   <div className="text-end fw-bold">{compoundWall}</div>
                 </div>
-
                 <div className="mb-3 text-gradient">
                   <strong>
                     <label className="form-label">
@@ -378,7 +396,6 @@ export default function ConstructionCalculator() {
                   </strong>
                   <div className="text-end fw-bold">{solarPower} kW</div>
                 </div>
-
                 <div className="total-summary bg-light rounded-4 p-3 mt-4">
                   <h6 className="fw-bold mb-3 text-gradient">Cost Breakdown</h6>
                   <ul className="list-unstyled mb-2 text-gradient">
@@ -520,6 +537,7 @@ export default function ConstructionCalculator() {
               </div>
             )}
           </div>
+          <p className="text-gradient text-center mt-2">{status}</p>
         </div>
       </div>
     </div>
