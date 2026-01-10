@@ -40,7 +40,7 @@ export default function HomePage() {
         <div className="hero-overlay-custom"></div>
         <div className="hero-content">
           <h1 className="display-3 fw-bold mb-4 text-white">
-            We Make Your <span className="text-muted">Livin'</span> Better
+            We Make Your <span className="text-muted">Livin&quot;</span> Better
           </h1>
           <h5 className="d-inline-block border border-2 border-light text-white py-3 px-5 mb-0">
             An Award Winning Studio Since 1990
